@@ -1,0 +1,14 @@
+{
+  "name": "hcl-frontend",
+  "version": "0.0.0",
+  "description": "Front end for healthconnect.link",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HealthConnectLink/HCL-FRONTEND.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/HealthConnectLink/HCL-FRONTEND/issues"
+  },
+  "homepage": "https://github.com/HealthConnectLink/HCL-FRONTEND#readme"
+}
