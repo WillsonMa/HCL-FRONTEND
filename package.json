@@ -2,6 +2,11 @@
   "name": "hcl-frontend",
   "version": "0.0.0",
   "description": "Front end for healthconnect.link",
+  "main": "src/main.ts",
+  "scripts": {
+    "build": "node build.js",
+    "test": "testee test/test.html --browsers firefox"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HealthConnectLink/HCL-FRONTEND.git"
@@ -10,5 +15,35 @@
   "bugs": {
     "url": "https://github.com/HealthConnectLink/HCL-FRONTEND/issues"
   },
-  "homepage": "https://github.com/HealthConnectLink/HCL-FRONTEND#readme"
+  "homepage": "https://github.com/HealthConnectLink/HCL-FRONTEND#readme",
+  "dependencies": {
+    "@angular/common": "~2.4.0",
+    "@angular/compiler": "~2.4.0",
+    "@angular/core": "~2.4.0",
+    "@angular/forms": "~2.4.0",
+    "@angular/http": "~2.4.0",
+    "@angular/platform-browser": "~2.4.0",
+    "@angular/platform-browser-dynamic": "~2.4.0",
+    "@angular/router": "~3.4.0",
+    "angular-in-memory-web-api": "~0.2.4",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.0.3",
+    "steal": "^1.0.9",
+    "steal-typescript": "^0.3.1",
+    "zone.js": "^0.7.4"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.5.40",
+    "reflect-metadata": "^0.1.9",
+    "steal-css": "^1.1.1",
+    "steal-jasmine": "0.0.3",
+    "steal-tools": "^1.0.1",
+    "testee": "^0.3.0"
+  },
+  "steal": {
+    "plugins": [
+      "steal-typescript",
+      "steal-css"
+    ]
+  }
 }
