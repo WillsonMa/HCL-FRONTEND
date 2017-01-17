@@ -5,7 +5,8 @@
   "main": "src/main.ts",
   "scripts": {
     "build": "node build.js",
-    "test": "testee test/test.html --browsers firefox"
+    "lint": "tslint ./src/**/*.ts -t verbose",
+    "test": "npm run lint && testee test/test.html --browsers firefox"
   },
   "repository": {
     "type": "git",
@@ -25,8 +26,10 @@
     "@angular/platform-browser": "~2.4.0",
     "@angular/platform-browser-dynamic": "~2.4.0",
     "@angular/router": "~3.4.0",
+    "@types/lodash": "^4.14.50",
     "angular-in-memory-web-api": "~0.2.4",
     "core-js": "^2.4.1",
+    "lodash": "^4.17.4",
     "rxjs": "^5.0.3",
     "steal": "^1.0.9",
     "steal-typescript": "^0.3.1",
@@ -38,7 +41,8 @@
     "steal-css": "^1.1.1",
     "steal-jasmine": "0.0.3",
     "steal-tools": "^1.0.1",
-    "testee": "^0.3.0"
+    "testee": "^0.3.0",
+    "tslint": "^4.3.1"
   },
   "steal": {
     "plugins": [
