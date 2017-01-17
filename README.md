@@ -14,7 +14,7 @@ npm install
 
 ### Running the App
 
-For development, all you need to do is run an HTTP server and navigate to the development.html page.
+For development, all you need to do is run an HTTP server and navigate to the index.html page.
 
 If you don't have an http server installed, you can install and run a simple server with NPM.
 
@@ -23,7 +23,7 @@ npm install --global http-server
 http-server
 ```
 
-This will start a server on port 8080, so you can navigate to [localhost:8080/development.html](http://localhost:8080/development.html) to view the app.
+This will start a server on port 8080, so you can navigate to [localhost:8080/](http://localhost:8080/) to view the app.
 
 ### Running Tests
 
