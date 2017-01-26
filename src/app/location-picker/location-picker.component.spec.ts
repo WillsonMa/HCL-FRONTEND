@@ -4,32 +4,24 @@ import { By } from "@angular/platform-browser";
 import {BrowserDynamicTestingModule, platformBrowserDynamicTesting} from "@angular/platform-browser-dynamic/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 
-import { OrganizationPageComponent } from "./organization-page.component";
+import { LocationPickerComponent } from "./location-picker.component";
 
-describe("OrganizationPageComponent", () => {
+describe("LocationPickerComponent", () => {
   let de: DebugElement;
-  let comp: OrganizationPageComponent;
-  let fixture: ComponentFixture<OrganizationPageComponent>;
-
-  beforeAll(() => {
-    TestBed.initTestEnvironment( BrowserDynamicTestingModule, platformBrowserDynamicTesting() );
-  });
-
-  afterAll(() => {
-    TestBed.resetTestEnvironment();
-  });
+  let comp: LocationPickerComponent;
+  let fixture: ComponentFixture<LocationPickerComponent>;
 
   beforeEach(async(() => {
     TestBed
     .configureTestingModule({
-      declarations: [ OrganizationPageComponent ],
+      declarations: [ LocationPickerComponent ],
       imports: [ RouterTestingModule ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OrganizationPageComponent);
+    fixture = TestBed.createComponent(LocationPickerComponent);
     comp = fixture.componentInstance;
     de = fixture.debugElement.query(By.css("h1"));
   });

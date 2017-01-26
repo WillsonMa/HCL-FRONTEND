@@ -1,30 +1,25 @@
 import { DebugElement } from "@angular/core";
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { By } from "@angular/platform-browser";
-import {BrowserDynamicTestingModule, platformBrowserDynamicTesting} from "@angular/platform-browser-dynamic/testing";
+
+import { AppComponent } from "./app.component";
+import { NavigationComponent } from "./navigation/navigation.component";
+
 import { RouterTestingModule } from "@angular/router/testing";
 
-import { NavigationComponent } from "../navigation/navigation.component";
-import { AppComponent } from "./app.component";
-
-describe("AppComponent", () => {
-  let de: DebugElement;
+describe('AppComponent', () => {
   let comp: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
 
-  beforeAll(() => {
-    TestBed.initTestEnvironment( BrowserDynamicTestingModule, platformBrowserDynamicTesting() );
-  });
-
-  afterAll(() => {
-    TestBed.resetTestEnvironment();
-  });
-
   beforeEach(async(() => {
-    TestBed
-    .configureTestingModule({
-      declarations: [ AppComponent, NavigationComponent ],
-      imports: [ RouterTestingModule ]
+    TestBed.configureTestingModule({
+      declarations: [
+        AppComponent,
+        NavigationComponent
+      ],
+      imports: [
+        RouterTestingModule
+      ]
     })
     .compileComponents();
   }));
@@ -32,7 +27,7 @@ describe("AppComponent", () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(AppComponent);
     comp = fixture.componentInstance;
-    de = fixture.debugElement.query(By.css("h1"));
+    fixture.detectChanges();
   });
 
   it("should create component", () => expect(comp).toBeDefined() );
