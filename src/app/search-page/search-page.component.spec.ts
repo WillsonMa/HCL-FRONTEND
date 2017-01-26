@@ -6,6 +6,8 @@ import { RouterTestingModule } from "@angular/router/testing";
 
 import { LocationPickerComponent } from "../location-picker/location-picker.component";
 import { SearchPageComponent } from "./search-page.component";
+import { FormsModule }   from '@angular/forms';
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect/src/multiselect-dropdown';
 
 describe("SearchPageComponent", () => {
   let de: DebugElement;
@@ -16,7 +18,11 @@ describe("SearchPageComponent", () => {
     TestBed
     .configureTestingModule({
       declarations: [ SearchPageComponent, LocationPickerComponent ],
-      imports: [ RouterTestingModule ]
+      imports: [
+        RouterTestingModule,
+        MultiselectDropdownModule,
+        FormsModule
+      ]
     })
     .compileComponents();
   }));

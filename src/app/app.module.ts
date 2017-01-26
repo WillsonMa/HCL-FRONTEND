@@ -1,11 +1,12 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { RouterModule } from "@angular/router";
+import { FormsModule } from '@angular/forms';
 
 // our modules
 import { AppRoutingModule } from "./app-routing.module";
 
 // third party modules
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect/src/multiselect-dropdown';
 
 // our components
 import { AppComponent } from "./app.component";
@@ -29,7 +30,9 @@ import { SearchPageComponent } from "./search-page/search-page.component";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MultiselectDropdownModule,
+    FormsModule
   ]
 })
 export class AppModule { }
