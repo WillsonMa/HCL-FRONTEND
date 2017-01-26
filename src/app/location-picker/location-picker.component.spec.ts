@@ -11,14 +11,6 @@ describe("LocationPickerComponent", () => {
   let comp: LocationPickerComponent;
   let fixture: ComponentFixture<LocationPickerComponent>;
 
-  beforeAll(() => {
-    TestBed.initTestEnvironment( BrowserDynamicTestingModule, platformBrowserDynamicTesting() );
-  });
-
-  afterAll(() => {
-    TestBed.resetTestEnvironment();
-  });
-
   beforeEach(async(() => {
     TestBed
     .configureTestingModule({

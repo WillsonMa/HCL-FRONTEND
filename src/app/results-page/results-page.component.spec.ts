@@ -4,32 +4,24 @@ import { By } from "@angular/platform-browser";
 import {BrowserDynamicTestingModule, platformBrowserDynamicTesting} from "@angular/platform-browser-dynamic/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 
-import { NavigationComponent } from "./navigation.component";
+import { ResultsPageComponent } from "./results-page.component";
 
-describe("NavigationComponent", () => {
+describe("ResultsPageComponent", () => {
   let de: DebugElement;
-  let comp: NavigationComponent;
-  let fixture: ComponentFixture<NavigationComponent>;
-
-  beforeAll(() => {
-    TestBed.initTestEnvironment( BrowserDynamicTestingModule, platformBrowserDynamicTesting() );
-  });
-
-  afterAll(() => {
-    TestBed.resetTestEnvironment();
-  });
+  let comp: ResultsPageComponent;
+  let fixture: ComponentFixture<ResultsPageComponent>;
 
   beforeEach(async(() => {
     TestBed
     .configureTestingModule({
-      declarations: [ NavigationComponent ],
+      declarations: [ ResultsPageComponent ],
       imports: [ RouterTestingModule ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NavigationComponent);
+    fixture = TestBed.createComponent(ResultsPageComponent);
     comp = fixture.componentInstance;
     de = fixture.debugElement.query(By.css("h1"));
   });

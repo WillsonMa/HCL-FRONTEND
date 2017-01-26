@@ -14,16 +14,13 @@ npm install
 
 ### Running the App
 
-For development, all you need to do is run an HTTP server and navigate to the index.html page.
-
-If you don't have an http server installed, you can install and run a simple server with NPM.
+For development, run the following command:
 
 ```
-npm install --global http-server
-http-server
+npm run start
 ```
 
-This will start a server on port 8080, so you can navigate to [localhost:8080/](http://localhost:8080/) to view the app.
+This will start a development server on port 4200, so you can navigate to [localhost:4200/](http://localhost:4200/) to view the app. This development server will also watch for any code changes you make to the app and reload your browser for you when you save.
 
 ### Running Tests
 
@@ -33,4 +30,8 @@ This will start a server on port 8080, so you can navigate to [localhost:8080/](
 npm test
 ```
 
-or by navigating to [localhost:8080/test/test.html](http://localhost:8080/test/test.html).
+This will also watch for changes and re-run tests when you save files in the app. To run the tests only once, use `npm run test:once`.
+
+### Adding New Components
+
+This app was created with [angular-cli](https://github.com/angular/angular-cli) so you can use any of [these commands](https://github.com/angular/angular-cli#generating-components-directives-pipes-and-services) to create new pieces of the app.

@@ -4,32 +4,31 @@ import { By } from "@angular/platform-browser";
 import {BrowserDynamicTestingModule, platformBrowserDynamicTesting} from "@angular/platform-browser-dynamic/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 
-import { ResultsPageComponent } from "./results-page.component";
+import { LocationPickerComponent } from "../location-picker/location-picker.component";
+import { SearchPageComponent } from "./search-page.component";
+import { FormsModule }   from '@angular/forms';
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect/src/multiselect-dropdown';
 
-describe("ResultsPageComponent", () => {
+describe("SearchPageComponent", () => {
   let de: DebugElement;
-  let comp: ResultsPageComponent;
-  let fixture: ComponentFixture<ResultsPageComponent>;
-
-  beforeAll(() => {
-    TestBed.initTestEnvironment( BrowserDynamicTestingModule, platformBrowserDynamicTesting() );
-  });
-
-  afterAll(() => {
-    TestBed.resetTestEnvironment();
-  });
+  let comp: SearchPageComponent;
+  let fixture: ComponentFixture<SearchPageComponent>;
 
   beforeEach(async(() => {
     TestBed
     .configureTestingModule({
-      declarations: [ ResultsPageComponent ],
-      imports: [ RouterTestingModule ]
+      declarations: [ SearchPageComponent, LocationPickerComponent ],
+      imports: [
+        RouterTestingModule,
+        MultiselectDropdownModule,
+        FormsModule
+      ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ResultsPageComponent);
+    fixture = TestBed.createComponent(SearchPageComponent);
     comp = fixture.componentInstance;
     de = fixture.debugElement.query(By.css("h1"));
   });

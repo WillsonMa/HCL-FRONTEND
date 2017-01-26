@@ -11,14 +11,6 @@ describe("OrganizationPageComponent", () => {
   let comp: OrganizationPageComponent;
   let fixture: ComponentFixture<OrganizationPageComponent>;
 
-  beforeAll(() => {
-    TestBed.initTestEnvironment( BrowserDynamicTestingModule, platformBrowserDynamicTesting() );
-  });
-
-  afterAll(() => {
-    TestBed.resetTestEnvironment();
-  });
-
   beforeEach(async(() => {
     TestBed
     .configureTestingModule({
