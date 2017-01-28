@@ -1,4 +1,129 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-    background: red;
+a {
+	color:#565656;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#5BB1CA;
+	text-decoration:none;
+}
+
+a:active {
+	text-decoration:none;
+}
+
+.btn-default {
+	background-color:#9FC525;
+}
+
+.searchresults {
+	width:100%;
+	height:50px;
+	background-color:#C0DD6B;
+	text-align:center;
+}
+
+.bottominfo {
+	text-align:center;
+	padding:10px;
+}
+
+.heroimg {
+	width:100%;
+	height:auto;
+	padding:0px 0px 30px 0px;
+}
+
+#accordion {
+	width:100%;
+}
+.container-fluid {
+	padding:0px;
+}
+
+.navbar-form {
+	padding:0px;
+}
+.navbar {
+	margin-bottom:0px;
+}
+
+.mainbio {
+	text-align:center;
+}
+.clinic-info {
+	background-color:#B4B4B4;
+}
+
+input[type="radio"], 
+input[type="checkbox"] {
+	margin:8px 5px 8px 8px;
+}
+p {
+	font-size:16px;
+}
+
+.radio-buttons {
+	text-align:center;
+	padding:30px;
+}
+
+.navbar-form center {
+	text-align:center;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+	background-color:#5BB1CA;
+}
+
+.form-control {
+	margin:20px;
+	width:20vw;
+}
+
+.btn btn-default searchbox {
+	margin:20px;
+}
+
+@media (min-width: 1170px) {
+.navbar-form .form-control {
+	margin:20px;
+	width:20vw;
+}
+}
+
+
+
+.information {
+	padding-top:10px;
+	background-color:#F0F0F0;
+	max-width:100%;
+	height: 625px;
+	text-align:center;
+}
+.services {
+	padding: 0px 5px 35px 5px;
+}
+
+h3 {
+	color:#5BB1CA;
+	padding:5px;
+}
+
+h4 {
+	color:#5BB1CA;
+}
+
+p {
+	padding-left:10px;
+}
+
+.text-warn {
+	color:#D0BA2B;
+}
+
+.printbtn {
+	width:30px;
+	height:40px;
 }
