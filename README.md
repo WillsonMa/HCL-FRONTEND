@@ -35,3 +35,13 @@ This will also watch for changes and re-run tests when you save files in the app
 ### Adding New Components
 
 This app was created with [angular-cli](https://github.com/angular/angular-cli) so you can use any of [these commands](https://github.com/angular/angular-cli#generating-components-directives-pipes-and-services) to create new pieces of the app.
+
+### Building the App for Production
+
+To create a production build, run this command:
+
+```
+npm run build
+```
+
+This will generate a `dist/` folder containing everything needed to run the app in production. To deploy the app, copy the `dist/` folder to the root of the web server.
