@@ -8,30 +8,35 @@ import { LocationPickerComponent } from "../location-picker/location-picker.comp
 import { SearchPageComponent } from "./search-page.component";
 import { FormsModule }   from '@angular/forms';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect/src/multiselect-dropdown';
+import { AgmCoreModule as GoogleMapsModule } from 'angular2-google-maps/core';
 
 describe("SearchPageComponent", () => {
-  let de: DebugElement;
-  let comp: SearchPageComponent;
-  let fixture: ComponentFixture<SearchPageComponent>;
+	let de: DebugElement;
+	let comp: SearchPageComponent;
+	let fixture: ComponentFixture<SearchPageComponent>;
 
-  beforeEach(async(() => {
-    TestBed
-    .configureTestingModule({
-      declarations: [ SearchPageComponent, LocationPickerComponent ],
-      imports: [
-        RouterTestingModule,
-        MultiselectDropdownModule,
-        FormsModule
-      ]
-    })
-    .compileComponents();
-  }));
+	beforeEach(async(() => {
+		TestBed
+		.configureTestingModule({
+			declarations: [ SearchPageComponent, LocationPickerComponent ],
+			imports: [
+				RouterTestingModule,
+				MultiselectDropdownModule,
+				FormsModule,
+				GoogleMapsModule.forRoot({
+					apiKey: "AIzaSyDnyjd_w7FdScc5fU1pc1DwncZOAXgeZMI",
+					libraries: ['places']
+				})
+			]
+		})
+		.compileComponents();
+	}));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SearchPageComponent);
-    comp = fixture.componentInstance;
-    de = fixture.debugElement.query(By.css("h1"));
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(SearchPageComponent);
+		comp = fixture.componentInstance;
+		de = fixture.debugElement.query(By.css("h1"));
+	});
 
-  it("should create component", () => expect(comp).toBeDefined() );
+	it("should create component", () => expect(comp).toBeDefined() );
 });

@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 
-import {MapsAPILoader} from 'angular2-google-maps/core';
+import { MapsAPILoader } from 'angular2-google-maps/core';
 
 declare var google: any;
 
@@ -10,16 +10,21 @@ declare var google: any;
 	templateUrl: "./location-picker.html"
 })
 export class LocationPickerComponent implements OnInit {
-  constructor(private mapsLoader: MapsAPILoader) { }
+	constructor(private mapsLoader: MapsAPILoader) { }
 
-  ngOnInit() {
-    this.mapsLoader.load()
-      .then(() => {
-        let autocomplete = new google.maps.places.Autocomplete(document.getElementById("location-picker"), {});
-        google.maps.event.addListener(autocomplete, 'place_changed', () => {
-          const place = autocomplete.getPlace();
-          console.log(place);
-        });
-      });
-  }
+	latitude: number;
+	longitude: number;
+
+	ngOnInit() {
+		this.mapsLoader.load()
+		.then(() => {
+			const autocomplete = new google.maps.places.Autocomplete(document.getElementById("location-picker"), {});
+			google.maps.event.addListener(autocomplete, 'place_changed', () => {
+				const place = autocomplete.getPlace();
+
+				this.latitude = place.geometry.location.lat();
+				this.longitude = place.geometry.location.lng();
+			});
+		});
+	}
 }
