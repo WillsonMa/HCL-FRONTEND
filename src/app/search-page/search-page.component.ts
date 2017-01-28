@@ -2,10 +2,9 @@ import { Component } from "@angular/core";
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect/src/multiselect-dropdown';
 
 @Component({
-  moduleId: "src/search-page/search-page",
-  selector: "search-page",
-  styleUrls: [ "search-page.css" ],
-  templateUrl: "search-page.html"
+	selector: "search-page",
+	styleUrls: [ "./search-page.css" ],
+	templateUrl: "./search-page.html"
 })
 export class SearchPageComponent {
 	private selectedOptions: number[];
