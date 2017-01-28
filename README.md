@@ -17,7 +17,7 @@ npm install
 For development, run the following command:
 
 ```
-npm run start
+npm start
 ```
 
 This will start a development server on port 4200, so you can navigate to [localhost:4200/](http://localhost:4200/) to view the app. This development server will also watch for any code changes you make to the app and reload your browser for you when you save.
