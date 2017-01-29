@@ -7,6 +7,7 @@ import { AppRoutingModule } from "./app-routing.module";
 
 // third party modules
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect/src/multiselect-dropdown';
+import { AgmCoreModule as GoogleMapsModule } from 'angular2-google-maps/core';
 
 // our components
 import { AppComponent } from "./app.component";
@@ -32,7 +33,11 @@ import { SearchPageComponent } from "./search-page/search-page.component";
     BrowserModule,
     AppRoutingModule,
     MultiselectDropdownModule,
-    FormsModule
+    FormsModule,
+    GoogleMapsModule.forRoot({
+      apiKey: "AIzaSyDnyjd_w7FdScc5fU1pc1DwncZOAXgeZMI",
+      libraries: ['places']
+    })
   ]
 })
 export class AppModule { }
