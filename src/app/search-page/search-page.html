@@ -3,12 +3,11 @@
 
 <ss-multiselect-dropdown
 	[options]="myOptions"
-	[(ngModel)]="selectedOptions"
-	(ngModelChange)="onChange($event)">
+	[(ngModel)]="selectedServiceCodes">
 </ss-multiselect-dropdown>
 
 <a
 	[routerLink]="['/results']"
-	[queryParams]="{ latitude: location?.latitude, longitude: location?.longitude }">
+	[queryParams]="{ latitude: location?.latitude, longitude: location?.longitude, serviceCode: selectedServiceCodes }">
 	Search
 </a>

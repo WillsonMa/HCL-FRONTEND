@@ -7,19 +7,18 @@ import { IMultiSelectOption } from 'angular-2-dropdown-multiselect/src/multisele
 	templateUrl: "./search-page.html"
 })
 export class SearchPageComponent {
-	private selectedOptions: number[];
+	private selectedServiceCodes: number[];
 
 	private myOptions: IMultiSelectOption[] = [
-		{ id: 1, name: 'Primary Care' },
-		{ id: 2, name: 'Women\'s Health/Family Planning' },
-		{ id: 3, name: 'Pediatric' },
-		{ id: 4, name: 'Dentistry' },
-		{ id: 5, name: 'Osteopathy' },
-		{ id: 6, name: 'Optometry/Ophthalmology' },
-		{ id: 7, name: 'Open 24 Hours' },
-		{ id: 8, name: 'Referrals Not Required' },
-		{ id: 9, name: 'Medications/Pharmacy' }
+		{ id: "BH-0500", name: "At Risk/Homeless Housing Related Assistance Programs" },
+		{ id: "BM-6500.1500", name: "Clothing" },
+		{ id: "BH-1800", name: "Emergency Shelter" },
+		{ id: "PN-8100.5000", name: "Mental Health Related Support Groups" },
+		{ id: "LN-9500", name: "Women's Health Centers" },
+		{ id: "LE-0100", name: "Primary Health Care" },
+		{ id: "LT-3000", name: "Hospice Care" },
+		{ id: "PN-8100.3000-050", name: "Cancer Support Group" },
+		{ id: "LV-1600", name: "Dental Care" },
+		{ id: "BD-1800.2000", name: "Food Pantry" }
 	];
-
-	onChange(ev) { console.log(`change event: ${ev}`); }
 }
