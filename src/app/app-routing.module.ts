@@ -9,7 +9,7 @@ import { assign } from "lodash";
 const routes: Routes = [
   { path: "",  component: SearchPageComponent },
   { path: "results",  component: ResultsPageComponent },
-  { path: "organization",  component: OrganizationPageComponent }
+  { path: "organization/:id",  component: OrganizationPageComponent }
 ];
 
 @NgModule({
