@@ -1,1 +1,4 @@
-<h3>Organization Page</h3>
+<template [ngIf]="organization">
+	<h3>{{organization.name}}</h3>
+	<p>{{organization.description}}</p>
+</template>
