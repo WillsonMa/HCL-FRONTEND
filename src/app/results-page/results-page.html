@@ -1,2 +1,10 @@
 <h3>Results Page</h3>
-<a routerLink="/organization">Organization</a>
+
+<h4>SEARCH RESULTS</h4>
+<ul>
+	<a  *ngFor="let result of results" routerLink="/organization/{{result.id}}">
+		<li>
+			<p>{{result.name}}</p>
+		</li>
+	</a>
+</ul>
