@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect/src/multiselect-dropdown';
 
 @Component({
@@ -9,7 +10,7 @@ import { IMultiSelectOption } from 'angular-2-dropdown-multiselect/src/multisele
 export class SearchPageComponent {
 	private selectedServiceCodes: number[];
 
-	private myOptions: IMultiSelectOption[] = [
+	private availableServiceCodes: IMultiSelectOption[] = [
 		{ id: "BH-0500", name: "At Risk/Homeless Housing Related Assistance Programs" },
 		{ id: "BM-6500.1500", name: "Clothing" },
 		{ id: "BH-1800", name: "Emergency Shelter" },

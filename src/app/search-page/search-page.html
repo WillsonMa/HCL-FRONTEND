@@ -1,13 +1,28 @@
-<h3>Search Page</h3>
-<location-picker #location></location-picker>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="heroimg">
+				<img src="/assets/images/landing-img.jpg" alt="doctor typing" class="img-responsive">
+			</div>
+			<div class="center">
+				<div class="floating-left">
+					<ss-multiselect-dropdown
+						[options]="availableServiceCodes"
+						[(ngModel)]="selectedServiceCodes">
+					</ss-multiselect-dropdown>
+				</div>
 
-<ss-multiselect-dropdown
-	[options]="myOptions"
-	[(ngModel)]="selectedServiceCodes">
-</ss-multiselect-dropdown>
-
-<a
-	[routerLink]="['/results']"
-	[queryParams]="{ latitude: location?.latitude, longitude: location?.longitude, serviceCodes: selectedServiceCodes }">
-	Search
-</a>
+				<div class="floating-left">
+					<location-picker #location></location-picker>
+					<div class="btn btn-default">
+						<a
+							[routerLink]="['/results']"
+							[queryParams]="{ latitude: location?.latitude, longitude: location?.longitude, serviceCodes: selectedServiceCodes }">
+							Search
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

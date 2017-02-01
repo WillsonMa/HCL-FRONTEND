@@ -4,8 +4,6 @@ import { OrganizationPageComponent } from "./organization-page/organization-page
 import { ResultsPageComponent } from "./results-page/results-page.component";
 import { SearchPageComponent } from "./search-page/search-page.component";
 
-import { assign } from "lodash";
-
 const routes: Routes = [
   { path: "",  component: SearchPageComponent },
   { path: "results",  component: ResultsPageComponent },

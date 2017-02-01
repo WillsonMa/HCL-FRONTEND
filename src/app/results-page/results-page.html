@@ -1,10 +1,41 @@
-<h3>Results Page</h3>
+<a routerLink="/organization">Organization</a>
 
-<h4>SEARCH RESULTS</h4>
-<ul>
-	<a  *ngFor="let result of results" routerLink="/organization/{{result.id}}">
-		<li>
-			<p>{{result.name}}</p>
-		</li>
-	</a>
-</ul>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-9"> 
+			<div class="bar-left-side">
+				<div class="floating-left">
+					<location-picker #location></location-picker>
+					<div class="btn btn-default">
+						<a
+							[routerLink]="['/results']"
+							[queryParams]="{ latitude: location?.latitude, longitude: location?.longitude, serviceCodes: selectedServiceCodes }">
+							Search
+						</a>
+					</div>
+				</div>
+
+				<div class="floating-left">
+					<ss-multiselect-dropdown
+						[options]="availableServiceCodes"
+						[(ngModel)]="selectedServiceCodes">
+					</ss-multiselect-dropdown>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="searchresults">
+				<h5>Search Results</h5>
+				<ul>
+					<a  *ngFor="let result of results" routerLink="/organization/{{result.id}}">
+						<li>
+						<p>{{result.name}}</p>
+						</li>
+					</a>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</div>

@@ -1,4 +1,121 @@
 <template [ngIf]="organization">
-	<h3>{{organization.name}}</h3>
-	<p>{{organization.description}}</p>
+	<img src="/assets/images/CAC.jpg" style="width:100%; height:auto;" alt="doctor hands typing">
+	<div class="container-fluid">
+		<div class="row">
+			<!--********************* START 4 COL// SIDE INFORMATION *********************-->
+			<div class="col-md-4">
+				<!--*****************************Database stuff to input information??*****************************-->
+				<div class="information">
+					<h4>Address</h4>
+					<p>1717 N. Stoughton Rd<br>Madison, WI 53704</p>
+					<h4>Phone</h4>
+					<p>(608) 246-41730 (Phone)<br>(877)675-3508 (Toll Free)<br>(608)246-4760 (Fax)</p>
+					<h4>Hours</h4>
+					<p>Monday: 10am-1pm | 3-7pm <br>Tuesday: 10am-1pm<br>Wednesday: Closed<br>Thursday: 10am-1pm | 3-7pm<br>Friday: 10am-1pm<br>Saturday: 9am-Noon<br>Sunday: Closed</p>
+					<h4>Email</h4>
+					<p><a href="mailto:cac@cacscw.org">cac@cacscw.org</a></p>
+					<h4>Social Media</h4>
+					<p><a href="https://www.facebook.com/cacscw/" target="_blank">Follow CAC on Facebook!</a></p>
+
+					<button type="button" class="btn btn-default center-block"><a href="#">Donate to CAC</a></button>
+
+				</div>
+
+			</div>
+			<!--*****************************END DB INFO??*****************************-->
+			<!--*****************************END 4COL *****************************-->
+
+			<div class="col-md-8">
+				<!--*****************************COVER PHOTO*****************************-->
+				<!--*****************************END COVER PHOTO*****************************-->
+
+				<!--*****************************ORGANIZATION INFORMATION******************************-->
+				<h3>{{organization.name}}</h3>
+				<p>{{organization.description}}</p>
+				<!--*****************************END OF ORGANIZATION INFORMATION*****************************-->
+
+				<!--*****************************SERVICES START*****************************-->
+				<div class="services">
+					<h3>Services | <a href="landing.html">Return to Search</a></h3>
+					<!--*****************************COLLAPSIBLE SERVICES START************************-->
+					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+						<div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="headingOne">
+								<h4 class="panel-title">
+									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+										<p class="text-success">Basic Needs - Children's Clothes</p>
+									</a>
+								</h4>
+							</div>
+							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+								<div class="panel-body">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="headingTwo">
+								<h4 class="panel-title">
+									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+										<p class="text-success">Basic Needs- Clothing - General</p>
+									</a>
+								</h4>
+							</div>
+							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+								<div class="panel-body">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="headingThree">
+								<h4 class="panel-title">
+									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+										<p class="text-warn">Financial Assistance - Housing Support</p>
+									</a>
+								</h4>
+							</div>
+							<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+								<div class="panel-body">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="headingFour">
+								<h4 class="panel-title">
+									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+										<p class="text-success">Financial Assistance - Housing Counseling</p>
+									</a>
+								</h4>
+							</div>
+							<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+								<div class="panel-body">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="headingFive">
+								<h4 class="panel-title">
+									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+										<p class="text-danger">Financial Assistance - Supportive Housing</p>
+									</a>
+								</h4>
+							</div>
+							<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+								<div class="panel-body">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+				<!--*****************************COLLAPSIBLE SERVICES END************************-->
+
+			</div>
+		</div>
+	</div>
 </template>
