@@ -18,6 +18,8 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
 
 	results: Array<Service>;
 
+	private mapZoomLevel: number = 10;
+
 	private selectedServiceCodes: number[];
 
 	private availableServiceCodes: IMultiSelectOption[] = [
