@@ -27,6 +27,22 @@
 		<div class="col-md-3">
 			<div class="searchresults">
 				<h5>Search Results</h5>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-9">
+			<template [ngIf]="results">
+				<sebm-google-map [latitude]="results[0].address_list[0].latitude" [longitude]="results[0].address_list[0].longitude" [zoom]="mapZoomLevel">
+					<sebm-google-map-marker
+						*ngFor="let result of results"
+						[latitude]="result.address_list[0].latitude"
+						[longitude]="result.address_list[0].longitude">
+					</sebm-google-map-marker>
+				</sebm-google-map>
+			</template>
+		</div>
+		<div class="col-md-3">
 				<ul>
 					<a  *ngFor="let result of results" routerLink="/organization/{{result.id}}">
 						<li>
@@ -34,8 +50,6 @@
 						</li>
 					</a>
 				</ul>
-			</div>
 		</div>
-
 	</div>
 </div>
