@@ -7,15 +7,15 @@
 				<!--*****************************Database stuff to input information??*****************************-->
 				<div class="information">
 					<h4>Address</h4>
-					<p>1717 N. Stoughton Rd<br>Madison, WI 53704</p>
+					<p>{{organization.address_list["0"].addressLine1}}<br>{{organization.address_list["0"].locality}}, {{organization.address_list["0"].region}} {{organization.address_list["0"].postcode}}</p>
 					<h4>Phone</h4>
-					<p>(608) 246-41730 (Phone)<br>(877)675-3508 (Toll Free)<br>(608)246-4760 (Fax)</p>
+					<p>(608) 246-41730 ({{organization.phone_list["0"].phoneName}})<br>{{organization.phone_list["0"].phoneNumber}} (Toll Free)<br>(608)246-4760 (Fax)</p>
 					<h4>Hours</h4>
-					<p>Monday: 10am-1pm | 3-7pm <br>Tuesday: 10am-1pm<br>Wednesday: Closed<br>Thursday: 10am-1pm | 3-7pm<br>Friday: 10am-1pm<br>Saturday: 9am-Noon<br>Sunday: Closed</p>
+					<p>Monday: {{organization.hours_list[4].openTime}} - {{organization.hours_list[4].closeTime}} <br>Tuesday: {{organization.hours_list[3].openTime}} - {{organization.hours_list[3].closeTime}}<br>Wednesday: {{organization.hours_list[1].openTime}} - {{organization.hours_list[1].closeTime}}<br>Thursday: {{organization.hours_list[0].openTime}} - {{organization.hours_list[0].closeTime}}<br>Friday: {{organization.hours_list[2].openTime}} - {{organization.hours_list[2].closeTime}}<br>Saturday: Closed<br>Sunday: Closed</p>
 					<h4>Email</h4>
-					<p><a href="mailto:cac@cacscw.org">cac@cacscw.org</a></p>
+					<p><a href="mailto:{{organization.email_list[0].emailAddress}}">{{organization.email_list["0"].emailAddress}}</a></p>
 					<h4>Social Media</h4>
-					<p><a href="https://www.facebook.com/cacscw/" target="_blank">Follow CAC on Facebook!</a></p>
+					<p><a href={{organization.websiteURL}} target="_blank">{{organization.websiteURL}}</a></p>
 
 					<button type="button" class="btn btn-default center-block"><a href="#">Donate to CAC</a></button>
 
@@ -43,13 +43,22 @@
 							<div class="panel-heading" role="tab" id="headingOne">
 								<h4 class="panel-title">
 									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-										<p class="text-success">Basic Needs - Children's Clothes</p>
+										<p class="text-success">{{organization.organizationService_list[5].service.description}}</p>
 									</a>
 								</h4>
 							</div>
 							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 								<div class="panel-body">
-									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									Payment Type: {{organization.organizationService_list["5"].paymentType}}<br>
+									Restriction Notes <br>
+									Contact information: <br>
+									{{organization.organizationService_list[5].phone_list["0"].phoneName}} : {{organization.organizationService_list[5].phone_list["0"].phoneNumber}} {{organization.organizationService_list[5].phone_list["0"].description}} <br>
+									Hours:<br>
+									Monday: <br>
+									Tuesday: <br>
+									Wednesday: {{organization.organizationService_list[5].hours_list[2].openTime}} - {{organization.organizationService_list[5].hours_list[2].closeTime}}<br>
+									Thursday: {{organization.organizationService_list[5].hours_list[1].openTime}} - {{organization.organizationService_list[5].hours_list[1].closeTime}}<br>
+									Friday: {{organization.organizationService_list[5].hours_list[0].openTime}} - {{organization.organizationService_list[5].hours_list[0].closeTime}}<br>
 								</div>
 							</div>
 						</div>
@@ -57,13 +66,22 @@
 							<div class="panel-heading" role="tab" id="headingTwo">
 								<h4 class="panel-title">
 									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-										<p class="text-success">Basic Needs- Clothing - General</p>
+										<p class="text-success">{{organization.organizationService_list[0].service.description}}</p>
 									</a>
 								</h4>
 							</div>
 							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 								<div class="panel-body">
-									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									Payment Type: {{organization.organizationService_list[0].paymentType}}<br>
+									Restriction Notes <br>
+									Contact information: <br>
+									{{organization.organizationService_list[0].phone_list[0].phoneName}} : {{organization.organizationService_list[0].phone_list[0].phoneNumber}} {{organization.organizationService_list[0].phone_list["0"].description}} <br>
+									Hours:<br>
+									Monday: {{organization.organizationService_list[0].hours_list[3].openTime}} - {{organization.organizationService_list[0].hours_list[3].closeTime}} <br>
+									Tuesday: {{organization.organizationService_list[0].hours_list[4].openTime}} - {{organization.organizationService_list[0].hours_list[4].closeTime}} <br>
+									Wednesday: {{organization.organizationService_list[0].hours_list[2].openTime}} - {{organization.organizationService_list[0].hours_list[2].closeTime}}<br>
+									Thursday: {{organization.organizationService_list[0].hours_list[1].openTime}} - {{organization.organizationService_list[0].hours_list[1].closeTime}}<br>
+									Friday: {{organization.organizationService_list[0].hours_list[0].openTime}} - {{organization.organizationService_list[0].hours_list[0].closeTime}}<br>
 								</div>
 							</div>
 						</div>
@@ -71,13 +89,22 @@
 							<div class="panel-heading" role="tab" id="headingThree">
 								<h4 class="panel-title">
 									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-										<p class="text-warn">Financial Assistance - Housing Support</p>
+										<p class="text-warn">{{organization.organizationService_list[1].service.description}}</p>
 									</a>
 								</h4>
 							</div>
 							<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 								<div class="panel-body">
-									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									Payment Type: {{organization.organizationService_list[1].paymentType}}<br>
+									Restriction Notes <br>
+									Contact information: <br>
+									{{organization.organizationService_list[1].phone_list[0].phoneName}} : {{organization.organizationService_list[1].phone_list[0].phoneNumber}} {{organization.organizationService_list[1].phone_list["0"].description}} <br>
+									Hours:<br>
+									Monday: {{organization.organizationService_list[1].hours_list[3].openTime}} - {{organization.organizationService_list[1].hours_list[3].closeTime}} <br>
+									Tuesday: {{organization.organizationService_list[1].hours_list[4].openTime}} - {{organization.organizationService_list[1].hours_list[4].closeTime}} <br>
+									Wednesday: {{organization.organizationService_list[1].hours_list[2].openTime}} - {{organization.organizationService_list[1].hours_list[2].closeTime}}<br>
+									Thursday: {{organization.organizationService_list[1].hours_list[1].openTime}} - {{organization.organizationService_list[1].hours_list[1].closeTime}}<br>
+									Friday: {{organization.organizationService_list[1].hours_list[0].openTime}} - {{organization.organizationService_list[1].hours_list[0].closeTime}}<br>
 								</div>
 							</div>
 						</div>
@@ -85,13 +112,22 @@
 							<div class="panel-heading" role="tab" id="headingFour">
 								<h4 class="panel-title">
 									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-										<p class="text-success">Financial Assistance - Housing Counseling</p>
+										<p class="text-success">{{organization.organizationService_list[2].service.description}}</p>
 									</a>
 								</h4>
 							</div>
 							<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
 								<div class="panel-body">
-									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									Payment Type: {{organization.organizationService_list[2].paymentType}}<br>
+									Restriction Notes <br>
+									Contact information: <br>
+									{{organization.organizationService_list[2].phone_list[0].phoneName}} : {{organization.organizationService_list[2].phone_list[0].phoneNumber}} {{organization.organizationService_list[2].phone_list["0"].description}} <br>
+									Hours:<br>
+									Monday: {{organization.organizationService_list[2].hours_list[3].openTime}} - {{organization.organizationService_list[2].hours_list[3].closeTime}} <br>
+									Tuesday: {{organization.organizationService_list[2].hours_list[4].openTime}} - {{organization.organizationService_list[2].hours_list[4].closeTime}} <br>
+									Wednesday: {{organization.organizationService_list[2].hours_list[2].openTime}} - {{organization.organizationService_list[2].hours_list[2].closeTime}}<br>
+									Thursday: {{organization.organizationService_list[2].hours_list[1].openTime}} - {{organization.organizationService_list[2].hours_list[1].closeTime}}<br>
+									Friday: {{organization.organizationService_list[2].hours_list[0].openTime}} - {{organization.organizationService_list[2].hours_list[0].closeTime}}<br>
 								</div>
 							</div>
 						</div>
@@ -99,13 +135,22 @@
 							<div class="panel-heading" role="tab" id="headingFive">
 								<h4 class="panel-title">
 									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-										<p class="text-danger">Financial Assistance - Supportive Housing</p>
+										<p class="text-danger">{{organization.organizationService_list[3].service.description}}</p>
 									</a>
 								</h4>
 							</div>
 							<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
 								<div class="panel-body">
-									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									Payment Type: {{organization.organizationService_list[3].paymentType}}<br>
+									Restriction Notes <br>
+									Contact information: <br>
+									{{organization.organizationService_list[3].phone_list[0].phoneName}} : {{organization.organizationService_list[3].phone_list[0].phoneNumber}} {{organization.organizationService_list[3].phone_list["0"].description}} <br>
+									Hours:<br>
+									Monday: {{organization.organizationService_list[3].hours_list[3].openTime}} - {{organization.organizationService_list[3].hours_list[3].closeTime}} <br>
+									Tuesday: {{organization.organizationService_list[3].hours_list[4].openTime}} - {{organization.organizationService_list[3].hours_list[4].closeTime}} <br>
+									Wednesday: {{organization.organizationService_list[3].hours_list[2].openTime}} - {{organization.organizationService_list[3].hours_list[2].closeTime}}<br>
+									Thursday: {{organization.organizationService_list[3].hours_list[1].openTime}} - {{organization.organizationService_list[3].hours_list[1].closeTime}}<br>
+									Friday: {{organization.organizationService_list[3].hours_list[0].openTime}} - {{organization.organizationService_list[3].hours_list[0].closeTime}}<br>
 								</div>
 							</div>
 						</div>
