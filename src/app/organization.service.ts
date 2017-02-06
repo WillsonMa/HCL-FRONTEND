@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { URLSearchParams, Http } from '@angular/http';
 
+import { getAvailabilityStatus } from './utils';
+import * as _ from 'lodash';
+
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()

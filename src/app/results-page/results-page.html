@@ -35,7 +35,10 @@
 	<div class="row">
 		<div class="col-md-9">
 			<template [ngIf]="results">
-				<sebm-google-map [latitude]="results[0].address_list[0].latitude" [longitude]="results[0].address_list[0].longitude" [zoom]="mapZoomLevel">
+				<sebm-google-map
+					[latitude]="results[0].address_list[0].latitude"
+					[longitude]="results[0].address_list[0].longitude"
+					[zoom]="mapZoomLevel">
 					<sebm-google-map-marker
 						*ngFor="let result of results"
 						iconUrl="/assets/images/pin-{{result.availabilityStatus}}.png"
@@ -47,7 +50,10 @@
 		</div>
 		<div class="col-md-3">
 				<ul>
-					<a  *ngFor="let result of results" routerLink="/organization/{{result.id}}" class="availability-{{result.availabilityStatus}}">
+					<a  *ngFor="let result of results"
+						routerLink="/organization/{{result.id}}"
+						[queryParams]="{ serviceCodes: serviceCodesParam }"
+						class="availability-{{result.availabilityStatus}}">
 						<li>
 						<p>{{result.name}}</p>
 						</li>

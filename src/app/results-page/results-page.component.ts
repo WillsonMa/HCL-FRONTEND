@@ -19,6 +19,7 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
 	results: Array<Service>;
 
 	private mapZoomLevel: number = 10;
+	private serviceCodesParam: Array<string>;
 
 	private selectedServiceCodes: number[];
 
@@ -42,10 +43,11 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.sub = this.route.queryParams.subscribe(params => {
+			this.serviceCodesParam = params['serviceCodes'].split(',');
 			this.getResults(
 				params['latitude'],
 				params['longitude'],
-				params['serviceCodes'].split(',')
+				this.serviceCodesParam
 			);
 		});
 	}
