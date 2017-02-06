@@ -24,6 +24,21 @@ export class SearchService {
 		})
 		.toPromise()
 		.then(response => response.json().organization_list)
+		.then(response => response.map((org) => {
+			const searchedServices = org.organizationService_list
+				.filter((service) => {
+					return serviceCodes.indexOf(service.name) >= 0;
+				});
+
+			const availableSearchedServices = searchedServices
+				.filter((service) => service.isAvailable);
+
+			org.availabilityStatus = availableSearchedServices.length === 0 ?
+				'none' :
+				(availableSearchedServices.length === searchedServices.length) ? 'all' : 'some';
+
+			return org;
+		}))
 		.catch(err => console.log(err));
 	}
 
