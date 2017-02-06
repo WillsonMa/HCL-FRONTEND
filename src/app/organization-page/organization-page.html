@@ -7,13 +7,13 @@
 				<!--*****************************Database stuff to input information??*****************************-->
 				<div class="information">
 					<h4>Address</h4>
-					<p>{{organization.address_list["0"].addressLine1}}<br>{{organization.address_list["0"].locality}}, {{organization.address_list["0"].region}} {{organization.address_list["0"].postcode}}</p>
+					<p>{{organization.address_list[0].addressLine1}}<br>{{organization.address_list[0].locality}}, {{organization.address_list[0].region}} {{organization.address_list[0].postcode}}</p>
 					<h4>Phone</h4>
-					<p>(608) 246-41730 ({{organization.phone_list["0"].phoneName}})<br>{{organization.phone_list["0"].phoneNumber}} (Toll Free)<br>(608)246-4760 (Fax)</p>
+					<p>(608) 246-41730 ({{organization.phone_list[0].phoneName}})<br>{{organization.phone_list[0].phoneNumber}} (Toll Free)<br>(608)246-4760 (Fax)</p>
 					<h4>Hours</h4>
 					<p>Monday: {{organization.hours_list[4].openTime}} - {{organization.hours_list[4].closeTime}} <br>Tuesday: {{organization.hours_list[3].openTime}} - {{organization.hours_list[3].closeTime}}<br>Wednesday: {{organization.hours_list[1].openTime}} - {{organization.hours_list[1].closeTime}}<br>Thursday: {{organization.hours_list[0].openTime}} - {{organization.hours_list[0].closeTime}}<br>Friday: {{organization.hours_list[2].openTime}} - {{organization.hours_list[2].closeTime}}<br>Saturday: Closed<br>Sunday: Closed</p>
 					<h4>Email</h4>
-					<p><a href="mailto:{{organization.email_list[0].emailAddress}}">{{organization.email_list["0"].emailAddress}}</a></p>
+					<p><a href="mailto:{{organization.email_list[0].emailAddress}}">{{organization.email_list[0].emailAddress}}</a></p>
 					<h4>Social Media</h4>
 					<p><a href={{organization.websiteURL}} target="_blank">{{organization.websiteURL}}</a></p>
 
@@ -39,137 +39,30 @@
 					<h3>Services | <a href="landing.html">Return to Search</a></h3>
 					<!--*****************************COLLAPSIBLE SERVICES START************************-->
 					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-						<div class="panel panel-default">
-							<div class="panel-heading" role="tab" id="headingOne">
-								<h4 class="panel-title">
-									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-										<p class="text-success">{{organization.organizationService_list[5].service.description}}</p>
-									</a>
-								</h4>
-							</div>
-							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-								<div class="panel-body">
-									Payment Type: {{organization.organizationService_list["5"].paymentType}}<br>
-									Restriction Notes <br>
-									Contact information: <br>
-									{{organization.organizationService_list[5].phone_list["0"].phoneName}} : {{organization.organizationService_list[5].phone_list["0"].phoneNumber}} {{organization.organizationService_list[5].phone_list["0"].description}} <br>
-									Hours:<br>
-									Monday: <br>
-									Tuesday: <br>
-									Wednesday: {{organization.organizationService_list[5].hours_list[2].openTime}} - {{organization.organizationService_list[5].hours_list[2].closeTime}}<br>
-									Thursday: {{organization.organizationService_list[5].hours_list[1].openTime}} - {{organization.organizationService_list[5].hours_list[1].closeTime}}<br>
-									Friday: {{organization.organizationService_list[5].hours_list[0].openTime}} - {{organization.organizationService_list[5].hours_list[0].closeTime}}<br>
-								</div>
-							</div>
-						</div>
-						<div class="panel panel-default">
-							<div class="panel-heading" role="tab" id="headingTwo">
-								<h4 class="panel-title">
-									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-										<p class="text-success">{{organization.organizationService_list[0].service.description}}</p>
-									</a>
-								</h4>
-							</div>
-							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-								<div class="panel-body">
-									Payment Type: {{organization.organizationService_list[0].paymentType}}<br>
-									Restriction Notes <br>
-									Contact information: <br>
-									{{organization.organizationService_list[0].phone_list[0].phoneName}} : {{organization.organizationService_list[0].phone_list[0].phoneNumber}} {{organization.organizationService_list[0].phone_list["0"].description}} <br>
-									Hours:<br>
-									Monday: {{organization.organizationService_list[0].hours_list[3].openTime}} - {{organization.organizationService_list[0].hours_list[3].closeTime}} <br>
-									Tuesday: {{organization.organizationService_list[0].hours_list[4].openTime}} - {{organization.organizationService_list[0].hours_list[4].closeTime}} <br>
-									Wednesday: {{organization.organizationService_list[0].hours_list[2].openTime}} - {{organization.organizationService_list[0].hours_list[2].closeTime}}<br>
-									Thursday: {{organization.organizationService_list[0].hours_list[1].openTime}} - {{organization.organizationService_list[0].hours_list[1].closeTime}}<br>
-									Friday: {{organization.organizationService_list[0].hours_list[0].openTime}} - {{organization.organizationService_list[0].hours_list[0].closeTime}}<br>
-								</div>
-							</div>
-						</div>
-						<div class="panel panel-default">
-							<div class="panel-heading" role="tab" id="headingThree">
-								<h4 class="panel-title">
-									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-										<p class="text-warn">{{organization.organizationService_list[1].service.description}}</p>
-									</a>
-								</h4>
-							</div>
-							<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-								<div class="panel-body">
-									Payment Type: {{organization.organizationService_list[1].paymentType}}<br>
-									Restriction Notes <br>
-									Contact information: <br>
-									{{organization.organizationService_list[1].phone_list[0].phoneName}} : {{organization.organizationService_list[1].phone_list[0].phoneNumber}} {{organization.organizationService_list[1].phone_list["0"].description}} <br>
-									Hours:<br>
-									Monday: {{organization.organizationService_list[1].hours_list[3].openTime}} - {{organization.organizationService_list[1].hours_list[3].closeTime}} <br>
-									Tuesday: {{organization.organizationService_list[1].hours_list[4].openTime}} - {{organization.organizationService_list[1].hours_list[4].closeTime}} <br>
-									Wednesday: {{organization.organizationService_list[1].hours_list[2].openTime}} - {{organization.organizationService_list[1].hours_list[2].closeTime}}<br>
-									Thursday: {{organization.organizationService_list[1].hours_list[1].openTime}} - {{organization.organizationService_list[1].hours_list[1].closeTime}}<br>
-									Friday: {{organization.organizationService_list[1].hours_list[0].openTime}} - {{organization.organizationService_list[1].hours_list[0].closeTime}}<br>
-								</div>
-							</div>
-						</div>
-						<div class="panel panel-default">
-							<div class="panel-heading" role="tab" id="headingFour">
-								<h4 class="panel-title">
-									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-										<p class="text-success">{{organization.organizationService_list[2].service.description}}</p>
-									</a>
-								</h4>
-							</div>
-							<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-								<div class="panel-body">
-									Payment Type: {{organization.organizationService_list[2].paymentType}}<br>
-									Restriction Notes <br>
-									Contact information: <br>
-									{{organization.organizationService_list[2].phone_list[0].phoneName}} : {{organization.organizationService_list[2].phone_list[0].phoneNumber}} {{organization.organizationService_list[2].phone_list["0"].description}} <br>
-									Hours:<br>
-									Monday: {{organization.organizationService_list[2].hours_list[3].openTime}} - {{organization.organizationService_list[2].hours_list[3].closeTime}} <br>
-									Tuesday: {{organization.organizationService_list[2].hours_list[4].openTime}} - {{organization.organizationService_list[2].hours_list[4].closeTime}} <br>
-									Wednesday: {{organization.organizationService_list[2].hours_list[2].openTime}} - {{organization.organizationService_list[2].hours_list[2].closeTime}}<br>
-									Thursday: {{organization.organizationService_list[2].hours_list[1].openTime}} - {{organization.organizationService_list[2].hours_list[1].closeTime}}<br>
-									Friday: {{organization.organizationService_list[2].hours_list[0].openTime}} - {{organization.organizationService_list[2].hours_list[0].closeTime}}<br>
-								</div>
-							</div>
-						</div>
-						<div class="panel panel-default">
-							<div class="panel-heading" role="tab" id="headingFive">
-								<h4 class="panel-title">
-									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-										<p class="text-danger">{{organization.organizationService_list[3].service.description}}</p>
-									</a>
-								</h4>
-							</div>
-							<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-								<div class="panel-body">
-									Payment Type: {{organization.organizationService_list[3].paymentType}}<br>
-									Restriction Notes <br>
-									Contact information: <br>
-									{{organization.organizationService_list[3].phone_list[0].phoneName}} : {{organization.organizationService_list[3].phone_list[0].phoneNumber}} {{organization.organizationService_list[3].phone_list["0"].description}} <br>
-									Hours:<br>
-									Monday: {{organization.organizationService_list[3].hours_list[3].openTime}} - {{organization.organizationService_list[3].hours_list[3].closeTime}} <br>
-									Tuesday: {{organization.organizationService_list[3].hours_list[4].openTime}} - {{organization.organizationService_list[3].hours_list[4].closeTime}} <br>
-									Wednesday: {{organization.organizationService_list[3].hours_list[2].openTime}} - {{organization.organizationService_list[3].hours_list[2].closeTime}}<br>
-									Thursday: {{organization.organizationService_list[3].hours_list[1].openTime}} - {{organization.organizationService_list[3].hours_list[1].closeTime}}<br>
-									Friday: {{organization.organizationService_list[3].hours_list[0].openTime}} - {{organization.organizationService_list[3].hours_list[0].closeTime}}<br>
-								</div>
-							</div>
-						</div>
-						<div class="panel panel-default" *ngFor="let organizationService of organization.organizationService_list">
-    					...
-    					<p class="organizationservicedescription">{{organizationService.service.description}}</p>
-						<p class="organizationservicepaymenttype">Payment Type: {{organizationService.paymentType}}</p>
-						<p class="organizationservicedescription">Restriction Notes: {{organizationService.restrictionNotes}}</p>
-							<p>Contact Information:</p>
-								<div class="panel panel-default" *ngFor="let phoneList of organization.phone_list">
-								<p class="organizationservicephone"> {{phoneList.phoneName}} {{phoneList.phoneNumber}}</p>
-								</div>
-							<p>Hours:</p>
-								<div class="panel panel-default" *ngFor="let hoursList of organization.hours_list">
-								<p class="organizationservicehours"> {{hoursList.dayOfWeek}} {{hoursList.openTime}} - {{hoursList.closeTime}}</p>
-								</div>
-   					 	... 
-						</div>
 
+
+
+						<div class="panel panel-default" *ngFor="let organizationService of organization.organizationService_list; let i=index">
+							<div class="panel-heading" role="tab" id="heading{{i}}">
+								<h4 class="panel-title">
+									<a role="button" [ngClass]="i === 0 ? '' : 'collapsed'" data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}" aria-expanded="true">
+										<p class="text-success">{{organizationService.service.description}}</p>
+									</a>
+								</h4>
+							</div>
+							<div id="collapse{{i}}" class="panel-collapse collapse in" role="tabpanel">
+								<div class="panel-body">
+									Payment Type: {{organizationService.paymentType}}<br>
+									Restriction Notes <br>
+									Contact information: <br>
+									{{organizationService.phone_list[0].phoneName}} : {{organizationService.phone_list[0].phoneNumber}} {{organizationService.phone_list[0].description}} <br>
+									Hours:<br>
+									<p *ngFor="let hoursList of organization.hours_list">
+										{{hoursList.dayOfWeek}}: {{hoursList.openTime}} - {{hoursList.closeTime}}
+									</p>
+								</div>
+							</div>
+						</div>
 
 					</div>
 				</div>
