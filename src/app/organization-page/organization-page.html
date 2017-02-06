@@ -154,6 +154,21 @@
 								</div>
 							</div>
 						</div>
+						<div class="panel panel-default" *ngFor="let organizationService of organization.organizationService_list">
+    					...
+    					<p class="organizationservicedescription">{{organizationService.service.description}}</p>
+						<p class="organizationservicepaymenttype">Payment Type: {{organizationService.paymentType}}</p>
+						<p class="organizationservicedescription">Restriction Notes: {{organizationService.restrictionNotes}}</p>
+							<p>Contact Information:</p>
+								<div class="panel panel-default" *ngFor="let phoneList of organization.phone_list">
+								<p class="organizationservicephone"> {{phoneList.phoneName}} {{phoneList.phoneNumber}}</p>
+								</div>
+							<p>Hours:</p>
+								<div class="panel panel-default" *ngFor="let hoursList of organization.hours_list">
+								<p class="organizationservicehours"> {{hoursList.dayOfWeek}} {{hoursList.openTime}} - {{hoursList.closeTime}}</p>
+								</div>
+   					 	... 
+						</div>
 
 
 					</div>
