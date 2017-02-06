@@ -14,8 +14,9 @@
 
 				<div class="floating-left">
 					<location-picker #location></location-picker>
-					<div class="btn btn-default">
+					<div class="btn btn-default" [ngClass]="location?.latitude && location?.longitude && selectedServiceCodes && selectedServiceCodes.length ? '' : 'disabled'">
 						<a
+							[ngClass]="location?.latitude && location?.longitude && selectedServiceCodes && selectedServiceCodes.length ? '' : 'disabled'"
 							[routerLink]="['/results']"
 							[queryParams]="{ latitude: location?.latitude, longitude: location?.longitude, serviceCodes: selectedServiceCodes }">
 							Search
