@@ -4,15 +4,15 @@
 			<div class="heroimg">
 				<img src="/assets/images/landing-img.jpg" alt="doctor typing" class="img-responsive">
 			</div>
-			<div class="searchcontent">
-				<div class="floating-left">
+			<div class="row">
+				<div class="col-md-6">
 					<ss-multiselect-dropdown
 						[options]="availableServiceCodes"
 						[(ngModel)]="selectedServiceCodes">
 					</ss-multiselect-dropdown>
 				</div>
 
-				<div class="floating-left">
+				<div class="col-md-6">
 					<location-picker #location></location-picker>
 					<div class="btn btn-default" [ngClass]="location?.latitude && location?.longitude && selectedServiceCodes && selectedServiceCodes.length ? '' : 'disabled'">
 						<a
