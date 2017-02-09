@@ -36,8 +36,8 @@
 		<div class="col-md-9">
 			<template [ngIf]="results">
 				<sebm-google-map
-					[latitude]="results[0].address_list[0].latitude"
-					[longitude]="results[0].address_list[0].longitude"
+					[latitude]="latitude"
+					[longitude]="longitude"
 					[zoom]="mapZoomLevel">
 					<sebm-google-map-marker
 						*ngFor="let result of results"
