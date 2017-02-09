@@ -18,6 +18,8 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
 
 	results: Array<Service>;
 
+	private latitude: number;
+	private longitude: number;
 	private mapZoomLevel: number = 10;
 	private serviceCodesParam: Array<string>;
 
@@ -43,6 +45,8 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.sub = this.route.queryParams.subscribe(params => {
+			this.latitude = +params['latitude'];
+			this.longitude = +params['longitude'];
 			this.serviceCodesParam = params['serviceCodes'].split(',');
 			this.getResults(
 				params['latitude'],
