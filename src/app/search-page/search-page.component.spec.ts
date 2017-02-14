@@ -10,6 +10,7 @@ import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect/src/mu
 
 import { LocationPickerComponent } from "../location-picker/location-picker.component";
 import { SearchPageComponent } from "./search-page.component";
+import { ServicesMultiselectComponent } from '../services-multiselect/services-multiselect.component';
 
 describe("SearchPageComponent", () => {
 	let de: DebugElement;
@@ -21,7 +22,8 @@ describe("SearchPageComponent", () => {
 		.configureTestingModule({
 			declarations: [
 				SearchPageComponent,
-				LocationPickerComponent
+				LocationPickerComponent,
+				ServicesMultiselectComponent
 			],
 			imports: [
 				RouterTestingModule,

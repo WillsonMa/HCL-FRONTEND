@@ -13,12 +13,12 @@
 				</div>
 
 				<div class="col-md-6">
-					<location-picker #location></location-picker>
-					<div class="btn btn-default" [ngClass]="location?.latitude && location?.longitude && selectedServiceCodes && selectedServiceCodes.length ? '' : 'disabled'">
+					<location-picker [(location)]="location"></location-picker>
+					<div class="btn btn-default" [ngClass]="location?.name && location?.latitude && location?.longitude && selectedServiceCodes && selectedServiceCodes.length ? '' : 'disabled'">
 						<a
-							[ngClass]="location?.latitude && location?.longitude && selectedServiceCodes && selectedServiceCodes.length ? '' : 'disabled'"
+							[ngClass]="location?.name && location?.latitude && location?.longitude && selectedServiceCodes && selectedServiceCodes.length ? '' : 'disabled'"
 							[routerLink]="['/results']"
-							[queryParams]="{ latitude: location?.latitude, longitude: location?.longitude, serviceCodes: selectedServiceCodes }">
+							[queryParams]="{ locationName: location?.name, latitude: location?.latitude, longitude: location?.longitude, serviceCodes: selectedServiceCodes }">
 							Search
 						</a>
 					</div>
