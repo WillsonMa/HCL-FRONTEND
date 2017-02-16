@@ -6,10 +6,9 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<ss-multiselect-dropdown
-						[options]="availableServiceCodes"
-						[(ngModel)]="selectedServiceCodes">
-					</ss-multiselect-dropdown>
+					<services-multiselect
+						[(selectedServiceCodes)]="selectedServiceCodes">
+					</services-multiselect>
 				</div>
 
 				<div class="col-md-6">

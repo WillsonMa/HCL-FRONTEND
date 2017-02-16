@@ -11,11 +11,10 @@
 				</div>
 
 				<div class="floating-left">
-					<ss-multiselect-dropdown
-						[options]="availableServiceCodes"
-						[ngModel]="selectedServiceCodes"
-						(ngModelChange)="updateQueryParams({ serviceCodes: $event })">
-					</ss-multiselect-dropdown>
+					<services-multiselect
+						[selectedServiceCodes]="selectedServiceCodes"
+						(selectedServiceCodesChange)="updateQueryParams({ serviceCodes: $event })">
+					</services-multiselect>
 				</div>
 				<div class="floating-left">
 					<a class="btn btn-default" href="#">Print</a>
