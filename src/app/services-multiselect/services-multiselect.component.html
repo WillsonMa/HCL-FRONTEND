@@ -1,0 +1,7 @@
+<ss-multiselect-dropdown
+	[settings]="multiselectSettings"
+	[texts]="multiselectTexts"
+	[options]="availableServiceCodes"
+	[ngModel]="selectedServiceCodes"
+	(ngModelChange)="updateSelectedServiceCodes($event)">
+</ss-multiselect-dropdown>

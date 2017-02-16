@@ -4,6 +4,7 @@ import { By } from "@angular/platform-browser";
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from "@angular/platform-browser-dynamic/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 import { AgmCoreModule as GoogleMapsModule } from 'angular2-google-maps/core';
+import { FormsModule } from '@angular/forms';
 
 import { LocationPickerComponent } from "./location-picker.component";
 
@@ -17,6 +18,7 @@ describe("LocationPickerComponent", () => {
 		.configureTestingModule({
 			declarations: [ LocationPickerComponent ],
 			imports: [
+				FormsModule,
 				RouterTestingModule,
 				GoogleMapsModule.forRoot({
 					apiKey: "AIzaSyDnyjd_w7FdScc5fU1pc1DwncZOAXgeZMI",
