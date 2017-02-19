@@ -45,12 +45,12 @@
 						<div class="panel panel-default" *ngFor="let organizationService of organization.organizationService_list; let i=index">
 							<div class="panel-heading" role="tab" id="heading{{i}}">
 								<h4 class="panel-title">
-									<a role="button" [ngClass]="i === 0 ? '' : 'collapsed'" data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}" aria-expanded="true">
+									<a class="collapsed" role="button" [ngClass]="i === 0 ? '' : 'collapsed'" data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}" aria-expanded="false">
 										<p class="text-success">{{organizationService.service.description}}</p>
 									</a>
 								</h4>
 							</div>
-							<div id="collapse{{i}}" class="panel-collapse collapse in" role="tabpanel">
+							<div id="collapse{{i}}" class="panel-collapse collapse" role="tabpanel">
 								<div class="panel-body">
 									Payment Type: {{organizationService.paymentType}}<br>
 									Restriction Notes <br>
