@@ -4,20 +4,20 @@
 			<div class="heroimg">
 				<img src="/assets/images/landing-img.jpg" alt="doctor typing" class="img-responsive">
 			</div>
-			<div class="center">
-				<div class="floating-left">
-					<ss-multiselect-dropdown
-						[options]="availableServiceCodes"
-						[(ngModel)]="selectedServiceCodes">
-					</ss-multiselect-dropdown>
+			<div class="row">
+				<div class="col-md-6">
+					<services-multiselect
+						[(selectedServiceCodes)]="selectedServiceCodes">
+					</services-multiselect>
 				</div>
 
-				<div class="floating-left">
-					<location-picker #location></location-picker>
-					<div class="btn btn-default">
+				<div class="col-md-6">
+					<location-picker [(location)]="location"></location-picker>
+					<div class="btn btn-default" [ngClass]="location?.name && location?.latitude && location?.longitude && selectedServiceCodes && selectedServiceCodes.length ? '' : 'disabled'">
 						<a
+							[ngClass]="location?.name && location?.latitude && location?.longitude && selectedServiceCodes && selectedServiceCodes.length ? '' : 'disabled'"
 							[routerLink]="['/results']"
-							[queryParams]="{ latitude: location?.latitude, longitude: location?.longitude, serviceCodes: selectedServiceCodes }">
+							[queryParams]="{ locationName: location?.name, latitude: location?.latitude, longitude: location?.longitude, serviceCodes: selectedServiceCodes }">
 							Search
 						</a>
 					</div>

@@ -1,6 +1,9 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute } from '@angular/router';
 
+import { getAvailabilityStatus } from '../utils';
+import * as _ from 'lodash';
+
 import { OrganizationService } from '../organization.service';
 
 @Component({
@@ -10,7 +13,10 @@ import { OrganizationService } from '../organization.service';
 	providers: [ OrganizationService ]
 })
 export class OrganizationPageComponent implements OnInit, OnDestroy {
-	private sub: any;
+	private paramsSub: any;
+	private queryParamsSub: any;
+
+	private serviceCodes: Array<String>;
 
 	organization: any;
 
@@ -20,21 +26,31 @@ export class OrganizationPageComponent implements OnInit, OnDestroy {
 	) {}
 
 	ngOnInit() {
-		this.sub = this.route.params.subscribe(params => {
+		this.paramsSub = this.route.params.subscribe(params => {
 			const id = params['id'];
 			this.getDetails(id);
+		});
+
+		this.queryParamsSub = this.route.queryParams.subscribe(params => {
+			this.serviceCodes = params['serviceCodes'].split(',');
 		});
 	}
 
 	ngOnDestroy() {
-		if (this.sub) {
-			this.sub.unsubscribe();
+		if (this.paramsSub) {
+			this.paramsSub.unsubscribe();
+		}
+		if (this.queryParamsSub) {
+			this.queryParamsSub.unsubscribe();
 		}
 	}
 
 	getDetails(id: string) {
 		console.log('id:', id);
 		this.organizationService.getOrganization(id)
+		.then(organization => _.assign(organization, {
+			availabilityStatus: getAvailabilityStatus(organization.organizationService_list, this.serviceCodes)
+		}))
 		.then(organization => {
 			console.log('Organization');
 			console.log(organization);

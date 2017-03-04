@@ -17,6 +17,7 @@ import { NavigationComponent } from "./navigation/navigation.component";
 import { OrganizationPageComponent } from "./organization-page/organization-page.component";
 import { ResultsPageComponent } from "./results-page/results-page.component";
 import { SearchPageComponent } from "./search-page/search-page.component";
+import { ServicesMultiselectComponent } from './services-multiselect/services-multiselect.component';
 
 @NgModule({
 	bootstrap: [ AppComponent ],
@@ -28,7 +29,8 @@ import { SearchPageComponent } from "./search-page/search-page.component";
 		OrganizationPageComponent,
 		// components
 		LocationPickerComponent,
-		NavigationComponent
+		NavigationComponent,
+		ServicesMultiselectComponent
 	],
 	imports: [
 		BrowserModule,

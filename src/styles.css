@@ -13,10 +13,26 @@ a:active {
 	text-decoration:none;
 }
 
+a.disabled {
+	pointer-events: none;
+	cursor: default;
+}
+
 .btn-default {
 	background-color:#5BB1CA;
-	border-radius: 0px;
+	border-radius: 3px;
 	border: none;
+}
+
+.btn-default.disabled {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+
+.btn-default.disabled:hover {
+    background-color: #e6e6e6;
 }
 
 .searchresults {
@@ -160,4 +176,10 @@ p {
 .col-md-9 {
 	padding: 0px;
 
+}
+
+ss-multiselect-dropdown .dropdown .btn {
+	min-width: 150px;
+	max-width: 250px;
+	white-space: normal;
 }
