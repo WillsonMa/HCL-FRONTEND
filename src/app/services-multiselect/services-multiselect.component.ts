@@ -41,7 +41,7 @@ export class ServicesMultiselectComponent {
 		//		closeOnSelect: false,
 		//		showCheckAll: false,
 		//		showUncheckAll: false,
-		//		dynamicTitleMaxItems: 3,
+				dynamicTitleMaxItems: 0,
 		//		maxHeight: '300px'
 	};
 

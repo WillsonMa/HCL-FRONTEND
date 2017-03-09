@@ -17,7 +17,7 @@
 					</services-multiselect>
 				</div>
 				<div class="floating-left">
-					<a class="btn btn-default" href="#">Print</a>
+					<a class="btn btn-default" href="#"><h5>PRINT</h5></a>
 				</div>
 			</div>
 		</div>
@@ -45,17 +45,22 @@
 			</template>
 		</div>
 		<div class="col-md-3">
+			<div class="scroll-area">
 				<ul>
 					<a
-						*ngFor="let result of results"
-						routerLink="/organization/{{result.id}}"
-						[queryParams]="{ serviceCodes: serviceCodesParam }"
-						class="availability-{{result.availabilityStatus}}">
-						<li>
-						<p>{{result.name}}</p>
-						</li>
-					</a>
+					*ngFor="let result of results" routerLink="/organization/{{result.id}}"
+					[queryParams]="{ serviceCodes: selectedServiceCodes }">
+                        <li>
+                        <div class="box-for-info">
+                        <img *ngIf="expression" src="{{imageURL}}" alt="{{imageAltText}}" class="img-responsive">
+                        <p>{{result.name}}</p>
+                        <p>{{result.displayAddress}}</p>
+                        <div class="results-pin"><img src="/assets/images/pin-{{result.availabilityStatus}}.png"></div>
+                        </div>
+                        </li>
+                    </a>
 				</ul>
+			</div>
 		</div>
 	</div>
 </div>

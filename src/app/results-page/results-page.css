@@ -1,12 +1,83 @@
 ul {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 li {
-	list-style: none;
+    list-style: none;
 }
 
 .sebm-google-map-container {
   height: 600px;
+}
+
+.btn {
+	border-radius: 0px;
+	height: 50px;
+}
+.btn-default {
+    background-color:#5BB1CA;
+    border-radius: 0px;
+    border: none;
+		height: 50px;
+}
+
+.btn-default:hover {
+        background-color:#5BB1CA;
+}
+
+.btn-search {
+    height:30px;   
+    background-color: #5BB1CA;
+    border-radius:0px;
+    border:0px;
+}
+
+a:hover {
+    color:#000;
+    text-decoration:none;
+}
+
+img {
+    width: 100%;
+    height:auto;
+}
+
+.box-for-info {
+    background-color: #EEE;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin: 0px 0px 10px 0px;
+}
+
+.results-pin {
+    width: 30px;
+    height: auto;
+}
+
+.floating-left {
+	margin: 0px 30px 0px 30px;
+}
+.dropdown {
+	border-radius: 0px;
+	height: 50px;
+}
+
+ss-multiselect-dropdown .dropdown .btn {
+	border-radius: 0px;
+	height: 50px;
+	background: red;
+}
+.dropdown-toggle .btn .btn-default .btn-secondary {
+	border-radius: 0px;
+	height: 50px;
+	background: red;
+}
+
+.scroll-area {
+	width: 100%;
+	max-height: 600px;
+	overflow: scroll;
+	padding: 0px 0px 50px 0px;
 }

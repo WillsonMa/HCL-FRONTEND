@@ -1,0 +1,10 @@
+input {
+    text-align: center;
+    border-width: 3px;
+    border:solid #CCC;
+}
+
+label {
+    font-weight: 500;
+    margin: 0px 10px 0px 0px;
+}
