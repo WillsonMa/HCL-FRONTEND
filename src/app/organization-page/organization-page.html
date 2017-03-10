@@ -6,6 +6,7 @@
 			<div class="col-md-4">
 				<!--*****************************Database stuff to input information??*****************************-->
 				<div class="information">
+					<p style="text-align: center">{{logoURL}}</p>
 					<h4>Address</h4>
 					<p>{{organization.address_list[0].addressLine1}}<br>{{organization.address_list[0].locality}}, {{organization.address_list[0].region}} {{organization.address_list[0].postcode}}</p>
 					<h4>Phone</h4>
@@ -16,9 +17,6 @@
 					<p><a href="mailto:{{organization.email_list[0].emailAddress}}">{{organization.email_list[0].emailAddress}}</a></p>
 					<h4>Social Media</h4>
 					<p><a href={{organization.websiteURL}} target="_blank">{{organization.websiteURL}}</a></p>
-
-					<button type="button" class="btn btn-default center-block"><a href="#">Donate to CAC</a></button>
-
 				</div>
 
 			</div>
@@ -36,7 +34,7 @@
 
 				<!--*****************************SERVICES START*****************************-->
 				<div class="services">
-					<h3>Services | <a href="landing.html">Return to Search</a></h3>
+					<h3>Services | <a routerLink="/">Return to Search</a></h3>
 					<!--*****************************COLLAPSIBLE SERVICES START************************-->
 					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 

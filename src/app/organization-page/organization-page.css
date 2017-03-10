@@ -1,9 +1,17 @@
 .availability-all {
-	color: #00ff00;
+	color: #3c763d;
 }
 .availability-none {
-	color: #ff0000;
+	color: #d12d00;
 }
 .availability-some {
-	color: #ffa500;
+	color: #D0BA2B;
+}
+
+a {
+	color: #7c7c7c;
+}
+
+a:hover {
+	color:#5BB1CA
 }
