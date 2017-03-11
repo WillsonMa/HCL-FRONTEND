@@ -27,9 +27,14 @@ export class SearchService {
 		})
 		.toPromise()
 		.then(response => response.json().organization_list)
-		.then(response => response.map(org => _.assign(org, {
-			availabilityStatus: getAvailabilityStatus(org.organizationService_list, serviceCodes)
-		})))
+		.then(response => response.map(org => {
+			const address = org.address_list[0];
+
+			return _.assign(org, {
+				availabilityStatus: getAvailabilityStatus(org.organizationService_list, serviceCodes),
+				displayAddress: `${address.addressLine1} ${address.locality}, ${address.region}`
+			});
+		}))
 		.catch(err => console.log(err));
 	}
 
