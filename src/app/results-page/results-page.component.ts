@@ -71,4 +71,8 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
 			relativeTo: this.activatedRoute
 		});
 	}
+
+	print() {
+		window.print();
+	}
 }
