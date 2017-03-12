@@ -1,7 +1,7 @@
 export function getAvailabilityStatus(serviceList: Array<any>, serviceCodes: Array<String>) {
 	const searchedServices = serviceList
-		.filter((service) => {
-			return serviceCodes.indexOf(service.name) >= 0;
+		.filter(service => {
+			return serviceCodes.indexOf(service.service.serviceCode) >= 0;
 		});
 
 	const availableSearchedServices = searchedServices
