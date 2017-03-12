@@ -1,11 +1,8 @@
-.availability-all {
+.available {
 	color: #3c763d;
 }
-.availability-none {
+.not-available {
 	color: #d12d00;
-}
-.availability-some {
-	color: #D0BA2B;
 }
 
 a {
