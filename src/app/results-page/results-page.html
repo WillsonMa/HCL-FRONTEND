@@ -12,6 +12,7 @@
 
 				<div class="floating-left">
 					<services-multiselect
+						dropdownClass="square"
 						[selectedServiceCodes]="selectedServiceCodes"
 						(selectedServiceCodesChange)="updateQueryParams({ serviceCodes: $event })">
 					</services-multiselect>
