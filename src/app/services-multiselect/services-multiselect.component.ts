@@ -14,6 +14,9 @@ export class ServicesMultiselectComponent {
 	@Output()
 	selectedServiceCodesChange = new EventEmitter();
 
+	@Input()
+	dropdownClass: string = '';
+
 	updateSelectedServiceCodes(selectedServiceCodes) {
 		this.selectedServiceCodes = selectedServiceCodes;
 		this.selectedServiceCodesChange.emit(this.selectedServiceCodes);
