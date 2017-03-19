@@ -12,3 +12,14 @@ a {
 a:hover {
 	color:#5BB1CA
 }
+
+.organization-banner {
+	width: 100%;
+	height: auto;
+}
+
+img.logo {
+	max-height: 250px;
+	width: auto;
+	margin-top: -50px;
+}

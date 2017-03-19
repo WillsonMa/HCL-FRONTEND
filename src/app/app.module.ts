@@ -18,6 +18,7 @@ import { OrganizationPageComponent } from "./organization-page/organization-page
 import { ResultsPageComponent } from "./results-page/results-page.component";
 import { SearchPageComponent } from "./search-page/search-page.component";
 import { ServicesMultiselectComponent } from './services-multiselect/services-multiselect.component';
+import { HttpPipe } from './http.pipe';
 
 @NgModule({
 	bootstrap: [ AppComponent ],
@@ -30,7 +31,8 @@ import { ServicesMultiselectComponent } from './services-multiselect/services-mu
 		// components
 		LocationPickerComponent,
 		NavigationComponent,
-		ServicesMultiselectComponent
+		ServicesMultiselectComponent,
+		HttpPipe
 	],
 	imports: [
 		BrowserModule,
