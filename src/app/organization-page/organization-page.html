@@ -8,7 +8,7 @@
 					<h4>Address</h4>
 					<p *ngIf="organization.address_list[0]">{{organization.address_list[0].addressLine1}}<br>{{organization.address_list[0].locality}}, {{organization.address_list[0].region}} {{organization.address_list[0].postcode}}</p>
 					<h4>Phone</h4>
-					<p *ngIf="organization.phone_list[0]">(608) 246-41730 ({{organization.phone_list[0]?.phoneName}})<br>{{organization.phone_list[0]?.phoneNumber}} (Toll Free)<br>(608)246-4760 (Fax)</p>
+					<p *ngFor="let phone of organization.phone_list">{{phone.phoneNumber}} ({{phone.phoneName}})</p>
 					<h4>Hours</h4>
 						<p *ngIf="organization.hours_list[4]">Monday: {{organization.hours_list[4].openTime}} - {{organization.hours_list[4].closeTime}}</p>
 						<p *ngIf="organization.hours_list[3]">Tuesday: {{organization.hours_list[3].openTime}} - {{organization.hours_list[3].closeTime}}</p>
