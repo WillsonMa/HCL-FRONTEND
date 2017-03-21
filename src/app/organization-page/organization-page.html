@@ -8,13 +8,19 @@
 				<div class="information">
 					<p style="text-align: center">{{logoURL}}</p>
 					<h4>Address</h4>
-					<p>{{organization.address_list[0].addressLine1}}<br>{{organization.address_list[0].locality}}, {{organization.address_list[0].region}} {{organization.address_list[0].postcode}}</p>
+					<p *ngIf="organization.address_list[0]">{{organization.address_list[0]?.addressLine1}}<br>{{organization.address_list[0].locality}}, {{organization.address_list[0].region}} {{organization.address_list[0].postcode}}</p>
 					<h4>Phone</h4>
-					<p>(608) 246-41730 ({{organization.phone_list[0].phoneName}})<br>{{organization.phone_list[0].phoneNumber}} (Toll Free)<br>(608)246-4760 (Fax)</p>
+					<p *ngIf="organization.phone_list[0]">(608) 246-41730 ({{organization.phone_list[0]?.phoneName}})<br>{{organization.phone_list[0]?.phoneNumber}} (Toll Free)<br>(608)246-4760 (Fax)</p>
 					<h4>Hours</h4>
-					<p>Monday: {{organization.hours_list[4].openTime}} - {{organization.hours_list[4].closeTime}} <br>Tuesday: {{organization.hours_list[3].openTime}} - {{organization.hours_list[3].closeTime}}<br>Wednesday: {{organization.hours_list[1].openTime}} - {{organization.hours_list[1].closeTime}}<br>Thursday: {{organization.hours_list[0].openTime}} - {{organization.hours_list[0].closeTime}}<br>Friday: {{organization.hours_list[2].openTime}} - {{organization.hours_list[2].closeTime}}<br>Saturday: Closed<br>Sunday: Closed</p>
-					<h4>Email</h4>
-					<p><a href="mailto:{{organization.email_list[0].emailAddress}}">{{organization.email_list[0].emailAddress}}</a></p>
+						<p *ngIf="organization.hours_list[4]">Monday: {{organization.hours_list[4]?.openTime}} - {{organization.hours_list[4]?.closeTime}}</p> 
+						<p *ngIf="organization.hours_list[3]"> Tuesday: {{organization.hours_list[3].openTime}} - {{organization.hours_list[3].closeTime}}</p>
+						<p *ngIf="organization.hours_list[1]">Wednesday: {{organization.hours_list[1].openTime}} - {{organization.hours_list[1].closeTime}}</p>
+						<p *ngIf="organization.hours_list[0]">Thursday: {{organization.hours_list[0].openTime}} - {{organization.hours_list[0].closeTime}}</p>
+					    <p *ngIf="organization.hours_list[2]">Friday: {{organization.hours_list[2].openTime}} - {{organization.hours_list[2].closeTime}}</p>
+						<p *ngIf="organization.hours_list[5]">Saturday: {{organization.hours_list[5].openTime}} - {{organization.hours_list[5].closeTime}}</p>
+					    <p *ngIf="organization.hours_list[6]">Sunday: {{organization.hours_list[6].openTime}} - {{organization.hours_list[6].closeTime}} </p>
+					<h4 *ngIf="organization.email_list[0]">Email</h4>
+					<p *ngIf="organization.email_list[0]"><a href="mailto:{{organization.email_list[0].emailAddress}}">{{organization.email_list[0].emailAddress}}</a></p>
 					<h4>Website</h4>
 					<p><a href={{organization.websiteURL}} target="_blank">{{organization.websiteURL}}</a></p>
 				</div>
@@ -41,17 +47,17 @@
 							<div class="panel-heading" role="tab" id="heading{{i}}">
 								<h4 class="panel-title">
 									<a class="collapsed" role="button" [ngClass]="i === 0 ? '' : 'collapsed'" data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}" aria-expanded="false">
-										<p  [ngClass]="{'available': organizationService.isAvailable, 'not-available': !organizationService.isAvailable}">{{organizationService.service.description}}</p>
+										<p [ngClass]="{'available': organizationService.isAvailable, 'not-available': !organizationService.isAvailable}">{{organizationService.service.description}}</p>
 									</a>
 								</h4>
 							</div>
 							<div id="collapse{{i}}" class="panel-collapse collapse" role="tabpanel">
 								<div class="panel-body">
-									Payment Type: {{organizationService.paymentType}}<br>
-									Restriction Notes <br>
-									Contact information: <br>
-									{{organizationService.phone_list[0].phoneName}} : {{organizationService.phone_list[0].phoneNumber}} {{organizationService.phone_list[0].description}} <br>
-									Hours:<br>
+									<p *ngIf='organizationService.paymentType'>Payment Type: {{organizationService.paymentType}}></p>
+									<p>Restriction Notes</p>
+									<p>Contact information: </p>
+									<p *ngIf="organizationService.phone_list[0]">{{organizationService.phone_list[0].phoneName}} : {{organizationService.phone_list[0].phoneNumber}} {{organizationService.phone_list[0].description}} <br>
+									Hours:</p>
 									<p *ngFor="let hoursList of organization.hours_list">
 										{{hoursList.dayOfWeek}}: {{hoursList.openTime}} - {{hoursList.closeTime}}
 									</p>
