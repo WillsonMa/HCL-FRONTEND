@@ -1,19 +1,17 @@
 <template [ngIf]="organization">
-	<img src="/assets/images/CAC.jpg" style="width:100%; height:auto;" alt="doctor hands typing">
+	<img [src]="organization.imageURL | http" class="organization-banner" alt="organization banner">
 	<div class="container-fluid">
 		<div class="row">
 			<!--********************* START 4 COL// SIDE INFORMATION *********************-->
 			<div class="col-md-4">
-				<!--*****************************Database stuff to input information??*****************************-->
 				<div class="information">
-					<p style="text-align: center">{{logoURL}}</p>
 					<h4>Address</h4>
-					<p *ngIf="organization.address_list[0]">{{organization.address_list[0]?.addressLine1}}<br>{{organization.address_list[0].locality}}, {{organization.address_list[0].region}} {{organization.address_list[0].postcode}}</p>
+					<p *ngIf="organization.address_list[0]">{{organization.address_list[0].addressLine1}}<br>{{organization.address_list[0].locality}}, {{organization.address_list[0].region}} {{organization.address_list[0].postcode}}</p>
 					<h4>Phone</h4>
-					<p *ngIf="organization.phone_list[0]">(608) 246-41730 ({{organization.phone_list[0]?.phoneName}})<br>{{organization.phone_list[0]?.phoneNumber}} (Toll Free)<br>(608)246-4760 (Fax)</p>
+					<p *ngFor="let phone of organization.phone_list">{{phone.phoneNumber}} ({{phone.phoneName}})</p>
 					<h4>Hours</h4>
-						<p *ngIf="organization.hours_list[4]">Monday: {{organization.hours_list[4]?.openTime}} - {{organization.hours_list[4]?.closeTime}}</p> 
-						<p *ngIf="organization.hours_list[3]"> Tuesday: {{organization.hours_list[3].openTime}} - {{organization.hours_list[3].closeTime}}</p>
+						<p *ngIf="organization.hours_list[4]">Monday: {{organization.hours_list[4].openTime}} - {{organization.hours_list[4].closeTime}}</p>
+						<p *ngIf="organization.hours_list[3]">Tuesday: {{organization.hours_list[3].openTime}} - {{organization.hours_list[3].closeTime}}</p>
 						<p *ngIf="organization.hours_list[1]">Wednesday: {{organization.hours_list[1].openTime}} - {{organization.hours_list[1].closeTime}}</p>
 						<p *ngIf="organization.hours_list[0]">Thursday: {{organization.hours_list[0].openTime}} - {{organization.hours_list[0].closeTime}}</p>
 					    <p *ngIf="organization.hours_list[2]">Friday: {{organization.hours_list[2].openTime}} - {{organization.hours_list[2].closeTime}}</p>
@@ -24,16 +22,11 @@
 					<h4>Website</h4>
 					<p><a href={{organization.websiteURL}} target="_blank">{{organization.websiteURL}}</a></p>
 				</div>
-
 			</div>
-			<!--*****************************END DB INFO??*****************************-->
 			<!--*****************************END 4COL *****************************-->
-
 			<div class="col-md-8">
-				<!--*****************************COVER PHOTO*****************************-->
-				<!--*****************************END COVER PHOTO*****************************-->
-
 				<!--*****************************ORGANIZATION INFORMATION******************************-->
+				<img class="logo" [src]="organization.logoURL | http" alt="oranization logo">
 				<h3>{{organization.name}}</h3>
 				<p>{{organization.description}}</p>
 				<!--*****************************END OF ORGANIZATION INFORMATION*****************************-->
@@ -64,11 +57,9 @@
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 				<!--*****************************COLLAPSIBLE SERVICES END************************-->
-
 			</div>
 		</div>
 	</div>
