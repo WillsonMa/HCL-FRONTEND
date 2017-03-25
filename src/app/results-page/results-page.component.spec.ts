@@ -1,49 +1,28 @@
-import { DebugElement } from "@angular/core";
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { By } from "@angular/platform-browser";
-import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from "@angular/platform-browser-dynamic/testing";
-import { RouterTestingModule } from "@angular/router/testing";
-import { HttpModule } from '@angular/http';
-import { FormsModule }   from '@angular/forms';
+/* tslint:disable:no-unused-variable */
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
-import { AgmCoreModule as GoogleMapsModule } from 'angular2-google-maps/core';
+import { ServicesMultiselectComponent } from './services-multiselect.component';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect/src/multiselect-dropdown';
 
-import { LocationPickerComponent } from "../location-picker/location-picker.component";
-import { ResultsPageComponent } from "./results-page.component";
-import { ServicesMultiselectComponent } from '../services-multiselect/services-multiselect.component';
-
-describe("ResultsPageComponent", () => {
-	let de: DebugElement;
-	let comp: ResultsPageComponent;
-	let fixture: ComponentFixture<ResultsPageComponent>;
+describe('ServicesMultiselectComponent', () => {
+	let comp: ServicesMultiselectComponent;
+	let fixture: ComponentFixture<ServicesMultiselectComponent>;
 
 	beforeEach(async(() => {
-		TestBed
-		.configureTestingModule({
-			declarations: [
-				ResultsPageComponent,
-				LocationPickerComponent,
-				ServicesMultiselectComponent
-			],
-			imports: [
-				RouterTestingModule,
-				MultiselectDropdownModule,
-				FormsModule,
-				HttpModule,
-				GoogleMapsModule.forRoot({
-					apiKey: "AIzaSyDnyjd_w7FdScc5fU1pc1DwncZOAXgeZMI",
-					libraries: ['places']
-				})
-			]
+		TestBed.configureTestingModule({
+			declarations: [ ServicesMultiselectComponent ],
+			imports: [ MultiselectDropdownModule, FormsModule ]
 		})
 		.compileComponents();
 	}));
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(ResultsPageComponent);
+		fixture = TestBed.createComponent(ServicesMultiselectComponent);
 		comp = fixture.componentInstance;
-		de = fixture.debugElement.query(By.css("h1"));
+		fixture.detectChanges();
 	});
 
 	it("should create component", () => expect(comp).toBeDefined() );
