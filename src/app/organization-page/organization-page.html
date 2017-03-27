@@ -7,7 +7,7 @@
 				<div class="information">
 					<h4>Address</h4>
 					<p *ngIf="organization.address_list[0]">{{organization.address_list[0].addressLine1}}<br>{{organization.address_list[0].locality}}, {{organization.address_list[0].region}} {{organization.address_list[0].postcode}}</p>
-					<h4>Phone</h4>
+					<h4 *ngIf="organization.phone_list.phone">Phone</h4>
 					<p *ngFor="let phone of organization.phone_list">{{phone.phoneNumber}} ({{phone.phoneName}})</p>
 					<h4>Hours</h4>
 						<p *ngIf="organization.hours_list[4]">Monday: {{organization.hours_list[4].openTime}} - {{organization.hours_list[4].closeTime}}</p>
@@ -57,9 +57,11 @@
 										</div>
 										<div class="col-md-6">
 											<p>Hours:</p>
-									<p *ngFor="let hoursList of organization.hours_list">
-										{{hoursList.dayOfWeek}}: {{hoursList.openTime}} - {{hoursList.closeTime}}
-									</p>
+									<p *ngIf='organizationService.hours_list[5]'> Monday: {{organizationService.hours_list[5].openTime}} - {{organizationService.hours_list[5].closeTime}} </p>		
+									<p *ngIf='organizationService.hours_list[2]'> Tuesday: {{organizationService.hours_list[2].openTime}} - {{organizationService.hours_list[2].closeTime}} </p>
+									<p *ngIf='organizationService.hours_list[3]'> Wednesday: {{organizationService.hours_list[3].openTime}} - {{organizationService.hours_list[3].closeTime}} </p>		
+									<p *ngIf='organizationService.hours_list[0]'> Thursday: {{organizationService.hours_list[0].openTime}} - {{organizationService.hours_list[0].closeTime}} </p>
+									<p *ngIf='organizationService.hours_list[1]'> Friday: {{organizationService.hours_list[1].openTime}} - {{organizationService.hours_list[1].closeTime}} </p>
 
 
 										</div>
