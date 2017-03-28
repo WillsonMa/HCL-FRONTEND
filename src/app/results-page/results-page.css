@@ -16,7 +16,7 @@ li {
 	height: 50px;
 }
 .btn-default {
-    background-color:#5BB1CA;
+    background-color:#CCC;
     border-radius: 0px;
     border: none;
 		height: 50px;
@@ -57,8 +57,14 @@ img {
 }
 
 .floating-left {
-	margin: 0px 30px 0px 30px;
+	margin: 0px 0px 0px 0px;
 }
+
+.floating-left-location {
+    float: left;
+    padding: 8px 0px 0px 250px;
+}
+
 .dropdown {
 	border-radius: 0px;
 	height: 50px;

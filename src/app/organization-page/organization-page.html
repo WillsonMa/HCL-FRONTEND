@@ -7,6 +7,7 @@
 				<div class="information">
 					<h4>Address</h4>
 					<p *ngIf="organization.address_list[0]">{{organization.address_list[0].addressLine1}}<br>{{organization.address_list[0].locality}}, {{organization.address_list[0].region}} {{organization.address_list[0].postcode}}</p>
+
 					<h4>Phone</h4>
 					
 					<table>
@@ -17,6 +18,7 @@
 							</p>
 						</tr>
 					</table>
+
 					<h4>Hours</h4>
 					<table>
 						<tr>
@@ -79,8 +81,10 @@
 
 				<!--*****************************SERVICES START*****************************-->
 				<div class="services">
-					<h3>Services | <a routerLink="/">Return to Search</a></h3>
+					<h3>Services | <a routerLink="/results-page">Return to Search</a></h3>
 					<!--*****************************COLLAPSIBLE SERVICES START************************-->
+				
+
 					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 						<div class="panel panel-default" *ngFor="let organizationService of organization.organizationService_list; let i=index">
 							<div class="panel-heading" role="tab" id="heading{{i}}">
@@ -92,14 +96,26 @@
 							</div>
 							<div id="collapse{{i}}" class="panel-collapse collapse" role="tabpanel">
 								<div class="panel-body">
-									<p *ngIf='organizationService.paymentType'>Payment Type: {{organizationService.paymentType}}></p>
+									<div class="row">
+										<div class="col-md-6">
+											<p *ngIf='organizationService.paymentType'>Payment Type: {{organizationService.paymentType}}></p>
 									<p>Restriction Notes</p>
 									<p>Contact information: </p>
-									<p *ngIf="organizationService.phone_list[0]">{{organizationService.phone_list[0].phoneName}} : {{organizationService.phone_list[0].phoneNumber}} {{organizationService.phone_list[0].description}} <br>
-									Hours:</p>
-									<p *ngFor="let hoursList of organization.hours_list">
-										{{hoursList.dayOfWeek}}: {{hoursList.openTime}} - {{hoursList.closeTime}}
-									</p>
+									<p *ngIf="organizationService.phone_list[0]">{{organizationService.phone_list[0].phoneName}} : {{organizationService.phone_list[0].phoneNumber}} {{organizationService.phone_list[0].description}}</p>
+										</div>
+										<div class="col-md-6">
+											<p>Hours:</p>
+									<p *ngIf='organizationService.hours_list[5]'> Monday: {{organizationService.hours_list[5].openTime}} - {{organizationService.hours_list[5].closeTime}} </p>		
+									<p *ngIf='organizationService.hours_list[2]'> Tuesday: {{organizationService.hours_list[2].openTime}} - {{organizationService.hours_list[2].closeTime}} </p>
+									<p *ngIf='organizationService.hours_list[3]'> Wednesday: {{organizationService.hours_list[3].openTime}} - {{organizationService.hours_list[3].closeTime}} </p>		
+									<p *ngIf='organizationService.hours_list[0]'> Thursday: {{organizationService.hours_list[0].openTime}} - {{organizationService.hours_list[0].closeTime}} </p>
+									<p *ngIf='organizationService.hours_list[1]'> Friday: {{organizationService.hours_list[1].openTime}} - {{organizationService.hours_list[1].closeTime}} </p>
+
+
+										</div>
+
+									</div>
+									
 								</div>
 							</div>
 						</div>

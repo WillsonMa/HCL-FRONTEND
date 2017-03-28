@@ -1,9 +1,8 @@
-
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-9"> 
 			<div class="bar-left-side">
-				<div class="floating-left">
+				<div class="floating-left-location">
 					<location-picker
 						[location]="location"
 						(locationChange)="updateQueryParams({ latitude: $event.latitude, longitude: $event.longitude, locationName: $event.name })">
@@ -25,7 +24,7 @@
 
 		<div class="col-md-3">
 			<div class="searchresults">
-				<h5>Search Results</h5>
+				<h5>SEARCH RESULTS</h5>
 			</div>
 		</div>
 	</div>
