@@ -2,6 +2,19 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { IMultiSelectOption, IMultiSelectTexts, IMultiSelectSettings } from 'angular-2-dropdown-multiselect/src/multiselect-dropdown';
 
+export const availableServiceCodes: IMultiSelectOption[] = [
+	{ id: "BH-0500", name: "At Risk/Homeless Housing Related Assistance Programs" },
+	{ id: "BM-6500.1500", name: "Clothing" },
+	{ id: "BH-1800", name: "Emergency Shelter" },
+	{ id: "PN-8100.5000", name: "Mental Health Related Support Groups" },
+	{ id: "LN-9500", name: "Women's Health Centers" },
+	{ id: "LE-0100", name: "Primary Health Care" },
+	{ id: "LT-3000", name: "Hospice Care" },
+	{ id: "PN-8100.3000-050", name: "Cancer Support Group" },
+	{ id: "LV-1600", name: "Dental Care" },
+	{ id: "BD-1800.2000", name: "Food Pantry" }
+];
+
 @Component({
 	selector: 'services-multiselect',
 	templateUrl: './services-multiselect.component.html',
@@ -22,18 +35,7 @@ export class ServicesMultiselectComponent {
 		this.selectedServiceCodesChange.emit(this.selectedServiceCodes);
 	}
 
-	availableServiceCodes: IMultiSelectOption[] = [
-		{ id: "BH-0500", name: "At Risk/Homeless Housing Related Assistance Programs" },
-		{ id: "BM-6500.1500", name: "Clothing" },
-		{ id: "BH-1800", name: "Emergency Shelter" },
-		{ id: "PN-8100.5000", name: "Mental Health Related Support Groups" },
-		{ id: "LN-9500", name: "Women's Health Centers" },
-		{ id: "LE-0100", name: "Primary Health Care" },
-		{ id: "LT-3000", name: "Hospice Care" },
-		{ id: "PN-8100.3000-050", name: "Cancer Support Group" },
-		{ id: "LV-1600", name: "Dental Care" },
-		{ id: "BD-1800.2000", name: "Food Pantry" }
-	];
+	availableServiceCodes: IMultiSelectOption[] = availableServiceCodes;
 
 	multiselectSettings: IMultiSelectSettings = {
 		//		pullRight: false,

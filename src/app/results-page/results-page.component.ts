@@ -5,6 +5,7 @@ import * as _ from 'lodash';
 
 import { SearchService } from '../search.service';
 import { Location } from '../location-picker/location-picker.component';
+import { availableServiceCodes } from '../services-multiselect/services-multiselect.component';
 
 type Service = Object;
 
@@ -22,45 +23,49 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
 	) {}
 
 	results: Array<Service>;
-
 	location: Location;
 	mapZoomLevel: number = 10;
 	selectedServiceCodes: Array<string>;
 
-	private sub: any;
+	private $params: any;
 	ngOnInit() {
-		this.sub = this.activatedRoute.queryParams.subscribe(params => {
-			this.location = {
-				name: params['locationName'],
-				latitude: +params['latitude'],
-				longitude: +params['longitude']
-			};
-			this.selectedServiceCodes = params['serviceCodes'].split(',');
-			this.updateResults(
-				params['latitude'],
-				params['longitude'],
-				this.selectedServiceCodes
-			);
+		this.$params = this.activatedRoute.queryParams.subscribe(params => {
+			this.storeValuesFromQueryParams(params);
+			this.updateSearchResults({
+				latitude: params['latitude'],
+				longitude: params['longitude'],
+				serviceCodes: this.selectedServiceCodes
+			});
 		});
 	}
 
 	ngOnDestroy() {
-		if (this.sub) {
-			this.sub.unsubscribe();
+		if (this.$params) {
+			this.$params.unsubscribe();
 		}
 	}
 
-	private updateResults(latitude: string, longitude: string, serviceCodes: Array<string>) {
-		this.searchService.getResults(
-			latitude,
-			longitude,
-			serviceCodes
-		)
-		.then(results => {
-			console.log('Search Results');
-			console.log(results);
-			this.results = results;
-		});
+	storeValuesFromQueryParams(params) {
+		this.location = {
+			name: params['locationName'],
+			latitude: +params['latitude'],
+			longitude: +params['longitude']
+		};
+
+		this.selectedServiceCodes =
+			params['serviceCodes'] && params['serviceCodes'].split(',') || [];
+	}
+
+	updateSearchResults({ latitude, longitude, serviceCodes }) {
+		serviceCodes = serviceCodes.length
+					? serviceCodes
+					: availableServiceCodes.map(({ id }) => id );
+
+		this.searchService
+			.getResults( latitude, longitude, serviceCodes )
+			.then(results => {
+				this.results = results;
+			});
 	}
 
 	updateQueryParams(newParams) {
