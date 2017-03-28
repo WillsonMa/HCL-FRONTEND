@@ -7,16 +7,64 @@
 				<div class="information">
 					<h4>Address</h4>
 					<p *ngIf="organization.address_list[0]">{{organization.address_list[0].addressLine1}}<br>{{organization.address_list[0].locality}}, {{organization.address_list[0].region}} {{organization.address_list[0].postcode}}</p>
-					<h4 *ngIf="organization.phone_list.phone">Phone</h4>
-					<p *ngFor="let phone of organization.phone_list">{{phone.phoneNumber}} ({{phone.phoneName}})</p>
+
+					<h4>Phone</h4>
+					
+					<table>
+						<tr>
+							<p *ngFor="let phone of organization.phone_list">
+							<td>({{phone.phoneName}})</td>
+							<td>{{phone.phoneNumber}}</td>
+							</p>
+						</tr>
+					</table>
+
 					<h4>Hours</h4>
-						<p *ngIf="organization.hours_list[4]">Monday: {{organization.hours_list[4].openTime}} - {{organization.hours_list[4].closeTime}}</p>
-						<p *ngIf="organization.hours_list[3]">Tuesday: {{organization.hours_list[3].openTime}} - {{organization.hours_list[3].closeTime}}</p>
-						<p *ngIf="organization.hours_list[1]">Wednesday: {{organization.hours_list[1].openTime}} - {{organization.hours_list[1].closeTime}}</p>
-						<p *ngIf="organization.hours_list[0]">Thursday: {{organization.hours_list[0].openTime}} - {{organization.hours_list[0].closeTime}}</p>
-					    <p *ngIf="organization.hours_list[2]">Friday: {{organization.hours_list[2].openTime}} - {{organization.hours_list[2].closeTime}}</p>
-						<p *ngIf="organization.hours_list[5]">Saturday: {{organization.hours_list[5].openTime}} - {{organization.hours_list[5].closeTime}}</p>
-					    <p *ngIf="organization.hours_list[6]">Sunday: {{organization.hours_list[6].openTime}} - {{organization.hours_list[6].closeTime}} </p>
+					<table>
+						<tr>
+							<p *ngIf="organization.hours_list[4]">
+								<td>Monday:</td>
+							<td>{{organization.hours_list[4].openTime}} - {{organization.hours_list[4].closeTime}}</td>
+							</p>
+						</tr>
+						<tr>
+							<p *ngIf="organization.hours_list[3]">
+							<td>Tuesday:</td>
+							<td>{{organization.hours_list[3].openTime}} - {{organization.hours_list[3].closeTime}}</td>
+						</tr>
+						<tr>
+							<p *ngIf="organization.hours_list[1]">
+							<td>Wednesday:</td>
+							<td>{{organization.hours_list[1].openTime}} - {{organization.hours_list[1].closeTime}}</td>
+							</p>
+						</tr>
+						<tr>
+							<p *ngIf="organization.hours_list[0]">
+							<td>Thursday:</td>
+							<td>{{organization.hours_list[0].openTime}} - {{organization.hours_list[0].closeTime}}</td>
+							</p>
+						</tr>
+						<tr>
+							<p *ngIf="organization.hours_list[2]">
+							<td>Friday:</td>
+							<td>{{organization.hours_list[2].openTime}} - {{organization.hours_list[2].closeTime}}</td>
+							</p>
+						</tr>
+						<tr>
+							<p *ngIf="organization.hours_list[5]">
+							<td>Saturday:</td>
+							<td>{{organization.hours_list[5].openTime}} - {{organization.hours_list[5].closeTime}}</td>
+							</p>
+						</tr>
+						<tr>
+							<p *ngIf="organization.hours_list[6]">
+							<td>Sunday:</td>
+							<td>{{organization.hours_list[6].openTime}} - {{organization.hours_list[6].closeTime}}</td>
+							</p>
+						</tr>
+
+					</table>
+						
 					<h4 *ngIf="organization.email_list[0]">Email</h4>
 					<p *ngIf="organization.email_list[0]"><a href="mailto:{{organization.email_list[0].emailAddress}}">{{organization.email_list[0].emailAddress}}</a></p>
 					<h4>Website</h4>
