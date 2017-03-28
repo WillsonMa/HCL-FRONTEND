@@ -5,4 +5,4 @@ before_install:
   - "sh -e /etc/init.d/xvfb start"
 addons:
   firefox: "latest"
-script: npm run test:once
+script: npm run test:coverage
