@@ -27,8 +27,7 @@ describe("ResultsPageComponent", () => {
 		serviceCodes: 'BM-6500.1500,BH-1800'
 	};
 	let $queryParams: Observable<Object> = Observable.of(queryParams);
-	let searchServiceResults = [ 'Mock', 'Results' ];
-	let sersearchServiceResultsPromise = Promise.resolve(searchServiceResults);
+	let $searchServiceResults = Observable.of([ 'Mock', 'Results' ]);
 
 	beforeEach(async(() => {
 		TestBed
@@ -151,7 +150,7 @@ describe("ResultsPageComponent", () => {
 			let searchService: SearchService = fixture.debugElement.injector.get(SearchService);
 
 			getResultsSpy = spyOn(searchService, 'getResults')
-				.and.returnValue(sersearchServiceResultsPromise);
+				.and.returnValue($searchServiceResults);
 		});
 
 		it("works", () => {

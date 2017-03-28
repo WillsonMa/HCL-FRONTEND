@@ -63,7 +63,7 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
 
 		this.searchService
 			.getResults( latitude, longitude, serviceCodes )
-			.then(results => {
+			.subscribe(results => {
 				this.results = results;
 			});
 	}
