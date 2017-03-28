@@ -50,19 +50,18 @@
 								<div class="panel-body">
 									<div class="row">
 										<div class="col-md-6">
-											<p *ngIf='organizationService.paymentType'>Payment Type: {{organizationService.paymentType}}></p>
-									<p>Restriction Notes</p>
-									<p>Contact information: </p>
+											<h6 *ngIf='organizationService.paymentType'>Payment Type:</h6> <p>{{organizationService.paymentType}}></p>
+									<h6>Restriction Notes</h6>
+									<h6>Contact information: </h6>
 									<p *ngIf="organizationService.phone_list[0]">{{organizationService.phone_list[0].phoneName}} : {{organizationService.phone_list[0].phoneNumber}} {{organizationService.phone_list[0].description}}</p>
 										</div>
 										<div class="col-md-6">
-											<p>Hours:</p>
-									<p *ngIf='organizationService.hours_list[5]'> Monday: {{organizationService.hours_list[5].openTime}} - {{organizationService.hours_list[5].closeTime}} </p>		
-									<p *ngIf='organizationService.hours_list[2]'> Tuesday: {{organizationService.hours_list[2].openTime}} - {{organizationService.hours_list[2].closeTime}} </p>
-									<p *ngIf='organizationService.hours_list[3]'> Wednesday: {{organizationService.hours_list[3].openTime}} - {{organizationService.hours_list[3].closeTime}} </p>		
-									<p *ngIf='organizationService.hours_list[0]'> Thursday: {{organizationService.hours_list[0].openTime}} - {{organizationService.hours_list[0].closeTime}} </p>
-									<p *ngIf='organizationService.hours_list[1]'> Friday: {{organizationService.hours_list[1].openTime}} - {{organizationService.hours_list[1].closeTime}} </p>
-
+											<h5>Hours:</h5>
+									<p *ngIf='organizationService.hours_list[5]'> <strong>Monday:</strong> {{organizationService.hours_list[5].openTime}} - {{organizationService.hours_list[5].closeTime}} </p>		
+									<p *ngIf='organizationService.hours_list[2]'> <strong>Tuesday:</strong> {{organizationService.hours_list[2].openTime}} - {{organizationService.hours_list[2].closeTime}} </p>
+									<p *ngIf='organizationService.hours_list[3]'> <strong>Wednesday</strong>: {{organizationService.hours_list[3].openTime}} - {{organizationService.hours_list[3].closeTime}} </p>		
+									<p *ngIf='organizationService.hours_list[0]'> <strong>Thursday:</strong> {{organizationService.hours_list[0].openTime}} - {{organizationService.hours_list[0].closeTime}} </p>
+									<p *ngIf='organizationService.hours_list[1]'> <strong>Friday:</strong> {{organizationService.hours_list[1].openTime}} - {{organizationService.hours_list[1].closeTime}} </p>
 
 										</div>
 
