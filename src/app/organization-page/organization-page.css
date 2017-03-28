@@ -24,6 +24,16 @@ img.logo {
 	margin-top: -50px;
 }
 
+h5 {
+	font-weight: bold;
+	font-size: 18px;
+	color: #000;
+}
+h6 {
+	font-weight: bold;
+	font-size: 14px;
+}
+
 .information {
 	padding:10px 0px 10px 30px;
 	background-color:#F0F0F0;
@@ -38,3 +48,4 @@ img.logo {
 td {
 	width:160px;
 }
+
