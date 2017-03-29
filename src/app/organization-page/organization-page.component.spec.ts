@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 
 import { OrganizationPageComponent } from "./organization-page.component";
 import { HttpPipe } from '../http.pipe';
+import { TimePipe } from '../time.pipe';
 
 describe("OrganizationPageComponent", () => {
 	let de: DebugElement;
@@ -16,7 +17,7 @@ describe("OrganizationPageComponent", () => {
 	beforeEach(async(() => {
 		TestBed
 		.configureTestingModule({
-			declarations: [ OrganizationPageComponent, HttpPipe ],
+			declarations: [ OrganizationPageComponent, HttpPipe, TimePipe ],
 			imports: [
 				RouterTestingModule,
 				HttpModule
