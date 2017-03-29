@@ -54,7 +54,7 @@ export class ServicesMultiselectComponent {
 		//		checked: 'checked',
 		//		checkedPlural: 'checked',
 		//		searchPlaceholder: 'Search...',
-		defaultTitle: 'Services'
+		defaultTitle: 'SERVICES'
 	}
 
 }
