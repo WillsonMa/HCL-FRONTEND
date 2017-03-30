@@ -3,5 +3,9 @@ services-multiselect {
 }
 
 .row {
-	padding: 0px 0px 200px 0px;
+	padding: 10px 0px 300px 0px;
+}
+
+li {
+	padding: 2px;
 }
