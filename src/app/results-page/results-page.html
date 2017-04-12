@@ -2,23 +2,18 @@
 	<div class="row">
 		<div class="col-md-9"> 
 			<div class="bar-left-side">
-				<div class="floating-left-location">
 					<location-picker
 						[location]="location"
 						(locationChange)="updateQueryParams({ latitude: $event.latitude, longitude: $event.longitude, locationName: $event.name })">
 					</location-picker>
-				</div>
-
-				<div class="floating-left">
+				
 					<services-multiselect
 						dropdownClass="square"
 						[selectedServiceCodes]="selectedServiceCodes"
 						(selectedServiceCodesChange)="updateQueryParams({ serviceCodes: $event })">
 					</services-multiselect>
-				</div>
-				<div class="floating-left">
+				
 					<a class="btn btn-default" href="#" (click)="print()"><h2>PRINT</h2></a>
-				</div>
 			</div>
 		</div>
 
