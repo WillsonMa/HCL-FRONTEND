@@ -1,24 +1,22 @@
 <div class="container-fluid">
 	<img src="/assets/images/cover.jpg" alt="cover-photo" class="img-responsive"/>
-	
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-12">
 					<services-multiselect
 						[(selectedServiceCodes)]="selectedServiceCodes">
 					</services-multiselect>
-				</div>
 
-				<div class="col-md-6">
 					<location-picker [(location)]="location"></location-picker>
 						<div class="btn btn-default" [ngClass]="location?.name && location?.latitude && location?.longitude && selectedServiceCodes && selectedServiceCodes.length ? '' : 'disabled'">
 							<a
 								[ngClass]="location?.name && location?.latitude && location?.longitude && selectedServiceCodes && selectedServiceCodes.length ? '' : 'disabled'"
 								[routerLink]="['/results']"
 								[queryParams]="{ locationName: location?.name, latitude: location?.latitude, longitude: location?.longitude, serviceCodes: selectedServiceCodes }">
-								Search
+								<h2>SEARCH</h2>
 							</a>
 						</div>
 				</div>
 			</div>
+		
 </div>
 			

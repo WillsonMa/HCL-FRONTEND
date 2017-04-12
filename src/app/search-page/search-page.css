@@ -1,11 +1,16 @@
-services-multiselect {
-	float: right;
+services-multiselect, location-picker {
+	display: inline-block;
 }
 
 .row {
-	padding: 10px 0px 300px 0px;
+	text-align: center;
+	padding: 10px 0px 0px 0px;
+	height: 100vh;
 }
-
 li {
 	padding: 2px;
+}
+
+h2 {
+	padding: 0px;
 }

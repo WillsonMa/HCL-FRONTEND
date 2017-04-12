@@ -22,17 +22,20 @@ a.disabled {
 	background-color:#5BB1CA;
 	border-radius: 3px;
 	border: none;
+	height: 40px;
 }
 
 .btn-default.disabled {
     color: #333;
-    background-color: #e6e6e6;
+    background-color: #a8a8a8;
     border-color: #adadad;
+	height:40px;
 }
 
 
 .btn-default.disabled:hover {
-    background-color: #e6e6e6;
+    background-color: #a8a8a8;
+	height: 40px;
 }
 
 .searchresults {
