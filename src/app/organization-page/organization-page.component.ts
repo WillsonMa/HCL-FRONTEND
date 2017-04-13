@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { getAvailabilityStatus } from '../utils';
 import * as _ from 'lodash';
@@ -22,7 +23,8 @@ export class OrganizationPageComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private route: ActivatedRoute,
-		private organizationService: OrganizationService
+		private organizationService: OrganizationService,
+		private location: Location
 	) {}
 
 	ngOnInit() {
@@ -56,5 +58,9 @@ export class OrganizationPageComponent implements OnInit, OnDestroy {
 			console.log(organization);
 			this.organization = organization;
 		});
+	}
+
+	navigateBack() {
+		this.location.back();
 	}
 }
