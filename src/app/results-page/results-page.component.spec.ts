@@ -2,7 +2,7 @@ import { DebugElement } from "@angular/core";
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { By } from "@angular/platform-browser";
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from "@angular/platform-browser-dynamic/testing";
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from "@angular/router/testing";
 import { HttpModule } from '@angular/http';
 import { FormsModule }   from '@angular/forms';
@@ -28,6 +28,9 @@ describe("ResultsPageComponent", () => {
 	};
 	let $queryParams: Observable<Object> = Observable.of(queryParams);
 	let $searchServiceResults = Observable.of([ 'Mock', 'Results' ]);
+	let router = {
+		navigate: jasmine.createSpy('navigate')
+	};
 
 	beforeEach(async(() => {
 		TestBed
@@ -57,7 +60,8 @@ describe("ResultsPageComponent", () => {
 						}
 					}
 				},
-				SearchService
+				SearchService,
+				{ provide: Router, useValue: router }
 			]
 		})
 		.compileComponents();
@@ -180,6 +184,34 @@ describe("ResultsPageComponent", () => {
 				availableServiceCodes.map(({ id }) => id )
 			);
 		});
+	});
+
+	it("highlightService() / clearHighlightedService()", () => {
+		const service1 = { id: 1 };
+		const service2 = { id: 2 };
+
+		expect(comp.highlightedService).toBeUndefined();
+
+		comp.highlightService(service1);
+		expect(comp.highlightedService).toBe(service1);
+
+		comp.highlightService(service2);
+		expect(comp.highlightedService).toBe(service2);
+
+		comp.clearHighlightedService();
+		expect(comp.highlightedService).toBeNull();
+	});
+
+	it("navigateToOrganizationPage()", () => {
+		const service = { id: 5 };
+		const queryParams = {
+			serviceCodes: [ "BM-6500.1500", "BH-1800", "BH-0500"	]
+		};
+		comp.selectedServiceCodes = queryParams.serviceCodes;
+
+		comp.navigateToOrganizationPage(service);
+
+		expect(router.navigate).toHaveBeenCalledWith([ '/organization', 5 ], { queryParams });
 	});
 
 	xit("updateQueryParams()", () => {});

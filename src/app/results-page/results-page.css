@@ -41,10 +41,16 @@ img {
 
 .box-for-info {
     background-color: #EEE;
-    width: 100%;
-    height: auto;
-    padding: 10px;
-    margin: 0px 0px 10px 0px;
+		padding: 4px;
+}
+
+.box-for-info-wrapper {
+		width: 100%;
+		padding: 4px;
+}
+
+.box-for-info-wrapper.highlight {
+		background-color: #C0DD6B;
 }
 
 .results-pin {
@@ -69,7 +75,7 @@ img {
 .scroll-area {
 	width: 100%;
 	max-height: 600px;
-	overflow: scroll;
+	overflow-y: scroll;
 	padding: 0px 0px 50px 0px;
 }
 
