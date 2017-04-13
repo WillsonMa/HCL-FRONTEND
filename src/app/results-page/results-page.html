@@ -34,7 +34,10 @@
 						*ngFor="let result of results"
 						iconUrl="/assets/images/pin-{{result.availabilityStatus}}.png"
 						[latitude]="result.address_list[0].latitude"
-						[longitude]="result.address_list[0].longitude">
+						[longitude]="result.address_list[0].longitude"
+						(markerClick)="navigateToOrganizationPage(result)"
+						(mouseOver)="highlightService(result)"
+						(mouseOut)="clearHighlightedService()">
 					</sebm-google-map-marker>
 				</sebm-google-map>
 			</template>
@@ -45,15 +48,15 @@
 					<a
 					*ngFor="let result of results" routerLink="/organization/{{result.id}}"
 					[queryParams]="{ serviceCodes: selectedServiceCodes }">
-                        <li>
-                        <div class="box-for-info">
-                        <img *ngIf="expression" src="{{imageURL}}" alt="{{imageAltText}}" class="img-responsive">
-                        <p>{{result.name}}</p>
-                        <p>{{result.displayAddress}}</p>
-                        <div class="results-pin"><img src="/assets/images/pin-{{result.availabilityStatus}}.png"></div>
-                        </div>
-                        </li>
-                    </a>
+							<li class="box-for-info-wrapper" [ngClass]="{'highlight': result === highlightedService }">
+								<div class="box-for-info">
+							<img *ngIf="expression" src="{{imageURL}}" alt="{{imageAltText}}" class="img-responsive">
+							<p>{{result.name}}</p>
+							<p>{{result.displayAddress}}</p>
+							<div class="results-pin"><img src="/assets/images/pin-{{result.availabilityStatus}}.png"></div>
+							</div>
+							</li>
+					</a>
 				</ul>
 			</div>
 		</div>

@@ -26,6 +26,7 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
 	location: Location;
 	mapZoomLevel: number = 10;
 	selectedServiceCodes: Array<string>;
+	highlightedService: Service;
 
 	private $params: any;
 	ngOnInit() {
@@ -79,5 +80,19 @@ export class ResultsPageComponent implements OnInit, OnDestroy {
 
 	print() {
 		window.print();
+	}
+
+	highlightService(service) {
+		this.highlightedService = service;
+	}
+
+	clearHighlightedService() {
+		this.highlightedService = null;
+	}
+
+	navigateToOrganizationPage(org) {
+		this.router.navigate(['/organization', org.id], {
+			queryParams: { serviceCodes: this.selectedServiceCodes }
+		});
 	}
 }
