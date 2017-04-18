@@ -7,9 +7,9 @@
 					</services-multiselect>
 
 					<location-picker [(location)]="location"></location-picker>
-						<div class="btn btn-default" [ngClass]="location?.name && location?.latitude && location?.longitude && selectedServiceCodes && selectedServiceCodes.length ? '' : 'disabled'">
+						<div class="btn btn-default" [ngClass]="location?.name && location?.latitude && location?.longitude ? '' : 'disabled'">
 							<a
-								[ngClass]="location?.name && location?.latitude && location?.longitude && selectedServiceCodes && selectedServiceCodes.length ? '' : 'disabled'"
+								[ngClass]="location?.name && location?.latitude && location?.longitude ? '' : 'disabled'"
 								[routerLink]="['/results']"
 								[queryParams]="{ locationName: location?.name, latitude: location?.latitude, longitude: location?.longitude, serviceCodes: selectedServiceCodes }">
 								<h2>SEARCH</h2>
