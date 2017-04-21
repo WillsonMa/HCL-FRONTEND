@@ -3,7 +3,8 @@
 	max-width: 250px;
 	white-space: normal;
 	color:#FFF;
-	font-size:20px;
+	font-size:25px;
+	padding:0px;
 }
 
 /deep/ ss-multiselect-dropdown.square .dropdown .btn {
