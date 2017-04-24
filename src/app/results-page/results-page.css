@@ -80,7 +80,7 @@ img {
 }
 
 .sebm-google-map-container {
-    height: 75vh;
+    height: 74vh;
     width: auto;
 }
 
@@ -95,25 +95,4 @@ services-multiselect, location-picker btn .btn-default {
 	background-color: #CCC;
 	padding: 0px;
     text-align: right;
-}
-
-@media screen and ( max-height: 600px ){
-   .sebm-google-map-container {
-    height: 74vh;
-    width: auto;
-}
-}
-
-@media screen and ( max-height: 800px ){
-   .sebm-google-map-container {
-    height: 80vh;
-    width: auto;
-}
-}
-
-@media screen and ( max-height: 1000px ){
-   .sebm-google-map-container {
-    height: 96vh;
-    width: auto;
-}
 }
