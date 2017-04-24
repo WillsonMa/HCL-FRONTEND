@@ -1,12 +1,4 @@
-input {
-    text-align: center;
-    border-width: 3px;
-    border:solid #CCC;
-    border-radius: 5px;
-    height: 40px;
-    width: 250px;
-    font-size: 18px;
-}
+
 
 label {
     font-weight: 500;

@@ -1,12 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*************************LINKS*************************/
 a {
-	color:#000;
+	color:#59B0C8;
 	text-decoration:none;
 }
 
 a:hover {
-	color:#5BB1CA;
-	text-decoration:none;
+	color:#C0DA6E;
+	text-decoration:underline;
 }
 
 a:active {
@@ -17,35 +19,100 @@ a.disabled {
 	pointer-events: none;
 	cursor: default;
 }
+/*************************END OF LINKS*************************/
 
+/*************************BUTTONS*************************/
 .btn-default {
 	background-color:#5BB1CA;
 	border-radius: 3px;
 	border: none;
 	height: 40px;
+	font-size: 25px;
+	color: #FFF;
+}
+.btn-default:hover {
+	background-color:#C0DA6E;
+	border-radius: 3px;
+	border: none;
+	height: 40px;
+	color: #FFF;
+}
+.btn-default>a{
+	color: #FFF;
+	text-decoration: none;
+}
+.btn-default.disabled>a{
+	color: #FFF;
 }
 
 .btn-default.disabled {
-    color: #333;
-    background-color: #a8a8a8;
-    border-color: #adadad;
+    color: #FFF;
+    background-color: #828081;
+    border-color: #828081;
 	height:40px;
 }
 
 
 .btn-default.disabled:hover {
-    background-color: #a8a8a8;
+    background-color: #828081;
 	height: 40px;
 }
+/*************************END OF BUTTONS*************************/
 
-.searchresults {
-	width:100%;
-	height:50px;
-	background-color:#C0DD6B;
-	text-align:center;
-    padding: 8px;
+/*************************TEXT ELEMENTS*************************/
+body {
+	font-size: 1.0rem;
+	
+}
+h1{
+	font-size: 2.4rem;
+	color: #5BB1CA
+
+}
+h2{
+	font-size: 2.2rem;
+	color: #5BB1CA
+}
+h3{
+	font-size: 2rem;
+	color: #C0DA6E;
+	
+}
+h4{
+	font-size: 1.8rem;
+}
+h5{
+	font-size: 1.6rem;
+}
+h6{
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+p{
+	font-size: 1.6rem;
+	padding-left: 10px;
+}
+/*************************END OF TEXT ELEMENTS************************/
+
+/*************************FORM ELEMENTS*************************/
+input {
+    text-align: center;
+    border-width: 3px;
+    border:solid #CCC;
+    border-radius: 5px;
+    height: 40px;
+    min-width: 250px;
+    font-size: 1.8rem;
+}
+input[type="checkbox"] {
+	margin:5px;
 }
 
+.radio-buttons {
+	text-align:center;
+	padding:30px;
+}
+/*************************END OF FORM ELEMENTS************************/
 .bottominfo {
 	text-align:center;
 	padding:10px;
@@ -57,116 +124,19 @@ a.disabled {
 	padding:0px 0px 30px 0px;
 }
 
-#accordion {
-	width:100%;
-}
 .container-fluid {
 	padding:0px;
 }
 
-.navbar-form {
-	padding:0px;
-}
-.navbar {
-	margin-bottom:0px;
-}
 
-.mainbio {
-	text-align:center;
-}
-.clinic-info {
-	background-color:#B4B4B4;
-}
 
-input[type="radio"], 
-input[type="checkbox"] {
-	margin:5px;
-}
-p {
-	font-size:16px;
-}
-
-.radio-buttons {
-	text-align:center;
-	padding:30px;
-}
-
-.navbar-form center {
-	text-align:center;
-}
-
-.navbar-default .navbar-nav > li > a:hover {
-	background-color:#5BB1CA;
-}
 
 .form-control {
 	margin:20px;
 	width:20vw;
 }
 
-.btn btn-default searchbox {
-	margin:20px;
-}
-
-@media (min-width: 1170px) {
-.navbar-form .form-control {
-	margin:20px;
-	width:20vw;
-}
-}
-.services {
-	padding: 0px 5px 35px 5px;
-}
-
-h2 {
-	color: #FFF;
-	font-size: 25px;
-	font-family: sans-serif;
-	margin: 0px;
-	padding: 8px;
-}
-
-h3 {
-	color:#5BB1CA;
-	padding:5px;
-}
-
-h4 {
-	color:#5BB1CA;
-}
-
-h5 {
-    color: #FFF;
-    font-family: sans-serif;
-    
-}
-
-p {
-	padding-left:10px;
-}
 
 .text-warn {
 	color:#D0BA2B;
-}
-
-.printbtn {
-	width:30px;
-	height:40px;
-}
-
-.floating-left {
-	float: left;
-	margin: 8px 30px 0px 30px;
-}
-
-.center {
-	margin: auto;
-}
-
-.col-md-3 {
-	padding: 0px;
-}
-
-.col-md-9 {
-	padding: 0px;
 }

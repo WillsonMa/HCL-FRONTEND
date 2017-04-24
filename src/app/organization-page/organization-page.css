@@ -4,15 +4,6 @@
 .not-available {
 	color: #d12d00;
 }
-
-a {
-	color: #7c7c7c;
-}
-
-a:hover {
-	color:#5BB1CA
-}
-
 .organization-banner {
 	width: 100%;
 	height: auto;
@@ -22,16 +13,6 @@ img.logo {
 	max-height: 250px;
 	width: auto;
 	margin-top: -50px;
-}
-
-h5 {
-	font-weight: bold;
-	font-size: 18px;
-	color: #000;
-}
-h6 {
-	font-weight: bold;
-	font-size: 14px;
 }
 
 .information {
@@ -51,3 +32,17 @@ td {
 	width:160px;
 }
 
+#accordion {
+	width:100%;
+}
+
+.mainbio {
+	text-align:center;
+}
+.clinic-info {
+	background-color:#B4B4B4;
+}
+
+.services {
+	padding: 0px 5px 35px 5px;
+}

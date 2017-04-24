@@ -12,8 +12,7 @@
 						[selectedServiceCodes]="selectedServiceCodes"
 						(selectedServiceCodesChange)="updateQueryParams({ serviceCodes: $event })">
 					</services-multiselect>
-				
-					<a class="btn btn-default" href="#" (click)="print()"><h2>PRINT</h2></a>
+					<a class="btn btn-default" (click)="print()">PRINT</a>
 			</div>
 		</div>
 

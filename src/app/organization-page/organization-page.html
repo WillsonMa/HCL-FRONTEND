@@ -5,10 +5,10 @@
 			<!--********************* START 4 COL// SIDE INFORMATION *********************-->
 			<div class="col-md-4">
 				<div class="information">
-					<h4>Address</h4>
+					<h2>Address</h2>
 					<p *ngIf="organization.address_list[0]">{{organization.address_list[0].addressLine1}}<br>{{organization.address_list[0].locality}}, {{organization.address_list[0].region}} {{organization.address_list[0].postcode}}</p>
 
-					<h4>Phone</h4>
+					<h2>Phone</h2>
 					
 					<table>
 						<tr>
@@ -19,7 +19,7 @@
 						</tr>
 					</table>
 
-					<h4>Hours</h4>
+					<h2>Hours</h2>
 					<table>
 						<tr>
 							<p *ngIf="organization.hours_list[4]">
@@ -65,9 +65,9 @@
 						</tr>
 					</table>
 						
-					<h4 *ngIf="organization.email_list[0]">Email</h4>
+					<h2 *ngIf="organization.email_list[0]">Email</h2>
 					<p *ngIf="organization.email_list[0]"><a href="mailto:{{organization.email_list[0].emailAddress}}">{{organization.email_list[0].emailAddress}}</a></p>
-					<h4>Website</h4>
+					<h2>Website</h2>
 					<p><a href={{organization.websiteURL}} target="_blank">{{organization.websiteURL}}</a></p>
 				</div>
 			</div>
@@ -75,34 +75,34 @@
 			<div class="col-md-8">
 				<!--*****************************ORGANIZATION INFORMATION******************************-->
 				<img class="logo" [src]="organization.logoURL | http" alt="oranization logo">
-				<h3>{{organization.name}}</h3>
+				<h1>{{organization.name}}</h1>
 				<p>{{organization.description}}</p>
 				<!--*****************************END OF ORGANIZATION INFORMATION*****************************-->
 
 				<!--*****************************SERVICES START*****************************-->
 				<div class="services">
-					<h3>Services | <a href="javascript://" (click)="navigateBack()">Return to Search</a></h3>
+					<h2>Services | <a href="javascript://" (click)="navigateBack()">Return to Search</a></h2>
 					<!--*****************************COLLAPSIBLE SERVICES START************************-->
 					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 						<div class="panel panel-default" *ngFor="let organizationService of organization.organizationService_list; let i=index">
 							<div class="panel-heading" role="tab" id="heading{{i}}">
-								<h4 class="panel-title">
+								<h3 class="panel-title">
 									<a class="collapsed" role="button" [ngClass]="i === 0 ? '' : 'collapsed'" data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}" aria-expanded="false">
 										<p [ngClass]="{'available': organizationService.isAvailable, 'not-available': !organizationService.isAvailable}">{{organizationService.service.description}}</p>
 									</a>
-								</h4>
+								</h3>
 							</div>
 							<div id="collapse{{i}}" class="panel-collapse collapse" role="tabpanel">
 								<div class="panel-body">
 									<div class="row">
 										<div class="col-md-6">
-											<h6 *ngIf='organizationService.paymentType'>Payment Type:</h6> <p></p>
-											<h6>Restriction Notes</h6>
+											<h4 *ngIf='organizationService.paymentType'>Payment Type:</h4> <p></p>
+											<h4>Restriction Notes</h4>
 											<h6>Contact information: </h6>
 											<p *ngIf="organizationService.phone_list[0]">{{organizationService.phone_list[0].phoneName}} : {{organizationService.phone_list[0].phoneNumber}} {{organizationService.phone_list[0].description}}</p>
 										</div>
 										<div class="col-md-6">
-											<h5>Hours:</h5>
+											<h4>Hours:</h4>
 											<p *ngIf='organizationService.hours_list[5]'> <strong>Monday:</strong> {{organizationService.hours_list[5].openTime | time}} - {{organizationService.hours_list[5].closeTime | time}} </p>
 											<p *ngIf='organizationService.hours_list[2]'> <strong>Tuesday:</strong> {{organizationService.hours_list[2].openTime | time}} - {{organizationService.hours_list[2].closeTime | time}} </p>
 											<p *ngIf='organizationService.hours_list[3]'> <strong>Wednesday</strong>: {{organizationService.hours_list[3].openTime | time}} - {{organizationService.hours_list[3].closeTime | time}} </p>
