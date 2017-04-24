@@ -1,0 +1,40 @@
+.col-md-12-logo{
+    text-align: center;
+    margin: 40px 0 30px 0px;
+}
+.col-md-12 {
+    text-align: center;
+}
+img {
+    width: 300px;
+    height: auto;
+}
+
+input {
+    min-width: 300px;
+    height: 35px;
+    border-radius: 5px;
+    border: solid 2px #cdccca;
+    text-align: center;
+    margin: 0px 0px 10px 0px;
+    font-size: 20px;
+    color: #828081;
+}
+
+input:focus {
+    border: solid 4px #c0da6e;
+}
+input [type="checkbox"]:checked {
+   margin: 0px;
+}
+.remember-password > p {
+   margin: 0px 0px 20px 0px;
+}
+
+input, p {
+	display: inline-block;
+}
+
+.forgot-password {
+    margin: 10px 0px 0px 0px;
+}

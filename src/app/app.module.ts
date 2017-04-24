@@ -20,6 +20,7 @@ import { SearchPageComponent } from "./search-page/search-page.component";
 import { ServicesMultiselectComponent } from './services-multiselect/services-multiselect.component';
 import { HttpPipe } from './http.pipe';
 import { TimePipe } from './time.pipe';
+import { LoginPageComponent } from "app/login-page/login-page.component";
 
 @NgModule({
 	bootstrap: [ AppComponent ],
@@ -29,6 +30,7 @@ import { TimePipe } from './time.pipe';
 		SearchPageComponent,
 		ResultsPageComponent,
 		OrganizationPageComponent,
+		LoginPageComponent
 		// components
 		LocationPickerComponent,
 		NavigationComponent,
